@@ -13,3 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(document).ready (
+	console.log('it hit')
+	('#header-bar-2').css({'margin-left':'0%'})
+
+	)

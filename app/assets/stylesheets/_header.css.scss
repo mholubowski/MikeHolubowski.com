@@ -1,0 +1,19 @@
+$app-bg-color: #3f3d3b;
+
+.header-bar {
+	padding:0;
+	margin:0;
+	min-height:4px !important;
+}
+
+#header-bar-1 {
+	background-color:#e1ac67;
+}
+
+#header-bar-2 {
+	background-color:lighten(#185c80, 10%);
+}
+
+#header-bar-3 {
+	background-color:$app-bg-color;
+}
