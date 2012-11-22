@@ -1,0 +1,24 @@
+@import "variables";
+
+#nav.shadow {
+	-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
+	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
+	        box-shadow: 0 7px 24px -3px #2B2B2B;
+}
+
+#links {
+	float:right;
+	margin-right:20px;
+
+	span.code-yellow {
+		margin-left: 10px;
+		}
+	a {
+		color: $code-black;
+		&:hover{
+			text-decoration: none;
+			color: $code-yellow;
+		}
+	}
+
+	}
