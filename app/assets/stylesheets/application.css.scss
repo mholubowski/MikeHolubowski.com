@@ -50,4 +50,39 @@ hr {
 .well {
 	background-color: lighten($app-bg-color, 35%);
 	//color: darken($code-yellow, 15%);
+	h3{
+		color: $code-yellow;
+		span {
+			font-size: 10px;
+			color: gray;
+		}
+	}
 }
+
+.well-dark {
+	background-color: lighten($app-bg-color, 5%);
+}
+
+h1.h1-header {
+	color: $code-blue;
+}
+
+/* Skills Page */
+
+.progress-box {
+	height: 25px;
+	width:  25px;
+	border: solid 1px $app-bg-color;
+	background-color: lighten($app-bg-color, 10%);
+	&.active-box {
+		background-color: $progress-box;
+	}
+	&:hover {
+		background-color: $progress-box-active;
+	}
+}
+
+
+
+
+
