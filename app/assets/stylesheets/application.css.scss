@@ -86,7 +86,26 @@ h1.h1-header {
 
 .picture-box {
 	height: 250px;
+	border: 1px solid darken($app-bg-color, 10%);
+	border-bottom: 3px solid $code-yellow;
+	background-color: lighten($app-bg-color, 10%);
+	text-align: center;
+	padding: 15px;
+	p {
+		margin:7px 0px;
+	}
+	img {
+		height: auto;
+		max-width: 95%;
+	}
+	// NOTE size of png is 250x222
 }
+
+.shadow {
+		-webkit-box-shadow: 0 7px 24px -3px $code-yellow;
+	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
+	        box-shadow: 0 7px 24px -3px $code-yellow;
+	}
 
 
 
