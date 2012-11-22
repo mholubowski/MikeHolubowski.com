@@ -3,7 +3,10 @@ Sandbox::Application.routes.draw do
   root to: 'home#index'
   get "greetings/hello"
 
-  match '/styletest' => 'home#styleTest'
+  match '/style' => 'home#styleTest'
+  match '/projects' => 'home#projects'
+  match '/skills' => 'home#skills'
+  match '/bio' => 'home#bio'
 
 
   # The priority is based upon order of creation:

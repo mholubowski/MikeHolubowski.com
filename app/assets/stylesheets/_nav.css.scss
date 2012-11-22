@@ -10,15 +10,21 @@
 	float:right;
 	margin-right:20px;
 
-	span.code-yellow {
-		margin-left: 10px;
-		}
 	a {
 		color: $code-black;
 		&:hover{
 			text-decoration: none;
 			color: $code-yellow;
 		}
+		.active {
+			//margin-left: 10px;
+			color: $code-yellow !important;
+			}
 	}
 
 	}
+
+.active {
+			margin-left: 10px;
+			color: $code-yellow !important;
+			}

@@ -7,13 +7,13 @@ class HomeController < ApplicationController
 	def styleTest
 	end
 
-	def bio
+	def projects
 	end
 
 	def skills
 	end
 
-	def projects
+	def bio
 	end
 
 end

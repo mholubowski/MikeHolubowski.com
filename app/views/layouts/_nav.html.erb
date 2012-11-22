@@ -19,9 +19,23 @@
 			<div id="links">
 				<br>
 				<br>
-				<h4>//projects //skills <a>//bio</a></h4>
+				<h4> 
+				   
+
+					 <%= link_to "//projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
+					  <%= link_to "//projects", projects_path if params[:action] != 'projects'  %> 
+
+					  <%= link_to "//skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
+					<%=   link_to "//skills", skills_path if params[:action] != 'skills' %>
+
+					 <%= link_to "//bio", bio_path, class: 'active' if params[:action] == 'bio'%>  
+					 <%=  link_to "//bio", bio_path if params[:action] != 'bio'   %>
+					 
+					  			
+
+
+																		</h4>
 			</div>
 		</div>
 	</div>
 </div>
-
