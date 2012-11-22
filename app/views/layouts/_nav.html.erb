@@ -12,7 +12,28 @@
 			<p>gravatar</p>
 		</div>
 		<div class="span4" style="margin-top:32px;">
-			<h4 class="code-yellow typed" style="font-size: 1.2em;">Student <em>of</em> Web Development <span>&nbsp;</span></h4>
+			
+			<h4 class="code-yellow typed" style="font-size: 1.2em;">
+
+				<%= 
+					case 
+						when params[:action] == 'home'
+							"Text for the HOME screen"
+						when params[:action] == 'projects'
+							"Text for the PROJECTS screen" 
+						when params[:action] == 'skills'
+							"Text for the SKILLS screen"
+						when params[:action] == 'bio'
+							"Text for the BIO screen"
+					end
+
+				 %>	<span>&nbsp;</span>
+				<!-- Student <em>of</em> Web Development <span>&nbsp;</span> -->
+
+
+
+			</h4>
+			
 			<br>
 			<hr>
 			<hr style="width:90%; margin-left:10%;">
