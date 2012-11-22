@@ -3,6 +3,8 @@ Sandbox::Application.routes.draw do
   root to: 'home#index'
   get "greetings/hello"
 
+  match '/styletest' => 'home#styleTest'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

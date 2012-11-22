@@ -15,11 +15,35 @@
 @import "bootstrap-responsive";
  
 /* App Wide Variable */
-
-$app-bg-color: #3f3d3b;
+@import "variables";
 
 
 
 body {
-	background-color: lighten($app-bg-color, 10%);
+	background-color: $app-bg-color;
+	font-family: "Andale Mono", AndaleMono, monospace;
+
+}
+
+div.container-fluid {
+	padding-top:30px;
+}
+
+.code-yellow {
+	color: $code-yellow;
+}
+
+.code-blue {
+	color: $code-blue;
+}
+
+hr {
+	border-bottom:none;
+	border-top:1px solid #6F6D6D;
+	margin: 10px 0px;
+}
+
+.well {
+	background-color: lighten($app-bg-color, 35%);
+	//color: darken($code-yellow, 15%);
 }

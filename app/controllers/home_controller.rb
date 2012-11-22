@@ -4,3 +4,5 @@ end
 def index
 end
 
+def styleTest
+end

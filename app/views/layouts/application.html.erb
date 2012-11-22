@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sandbox</title>
+  <title>Mike Holubowski</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,11 @@
 <body>
 <%= render 'layouts/header' %>
 
-<%= yield %>
+<div class="container-fluid">
+	
+	<%= yield %>
+</div>
+
 
 </body>
 </html>
