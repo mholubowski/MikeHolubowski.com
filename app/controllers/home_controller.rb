@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
 
-	def index
+	def home
 	end
 
 	def styleTest

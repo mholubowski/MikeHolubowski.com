@@ -1,6 +1,6 @@
 Sandbox::Application.routes.draw do
 
-  root to: 'home#index'
+  root to: 'home#home'
   get "greetings/hello"
 
   match '/style' => 'home#styleTest'
