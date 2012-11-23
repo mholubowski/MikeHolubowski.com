@@ -7,6 +7,7 @@ Sandbox::Application.routes.draw do
   match '/projects' => 'home#projects'
   match '/skills' => 'home#skills'
   match '/bio' => 'home#bio'
+  match '/contact' => 'home#contact'
 
 
   # The priority is based upon order of creation:

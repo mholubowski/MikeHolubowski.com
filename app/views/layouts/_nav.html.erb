@@ -25,6 +25,8 @@
 							"Text for the SKILLS screen"
 						when params[:action] == 'bio'
 							"Text for the BIO screen"
+						when params[:action] == 'contact'
+						"Text for the CONTACT screen"
 					end
 
 				 %>	<span>&nbsp;</span>
@@ -42,8 +44,7 @@
 				<br>
 				<h4> 
 				   
-					<%= link_to "home", '/', class: 'active' if params[:action] == 'home' %> 
-					  <%= link_to "//home", '/' if params[:action] != 'home'  %>
+					
 
 					 <%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
 					  <%= link_to "//projects", projects_path if params[:action] != 'projects'  %> 
@@ -53,6 +54,9 @@
 
 					 <%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio'%>  
 					 <%=  link_to "//bio", bio_path if params[:action] != 'bio'   %>
+
+					 <%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact'%>  
+					 <%=  link_to "//contact", contact_path if params[:action] != 'contact'   %>
 					 
 					  			
 
