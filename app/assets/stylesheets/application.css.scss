@@ -122,9 +122,9 @@ h1.h1-header {
 /* _________________________________________________________ Projects Page */
 
 .shadow-dark {
-	-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
+	//-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
 	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	        box-shadow: 0 7px 24px -3px #2B2B2B, inset 1px -4px 9px -2px yellow;
+	       // box-shadow: 0 7px 24px -3px #2B2B2B; //inset 1px -4px 9px -2px yellow;
 }
 
 .shadow-inset {
@@ -141,11 +141,13 @@ h1.h1-header {
 	background-color:lighten($app-bg-color, 5%);
 	padding: 10px;
 	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+		padding: 1%;
 		min-height: 226px;
 		background-color:lighten($app-bg-color, 10%);
 		margin:5px;
 		&:hover {
-					background-color:$app-bg-color-white;
+					//background-color:$app-bg-color-white;
+					box-shadow: 0 7px 24px -3px #2B2B2B;
 		}
 	}
 }

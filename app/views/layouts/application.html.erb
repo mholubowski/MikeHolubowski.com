@@ -12,6 +12,15 @@
 <%= render 'layouts/header' %>
 <%= render 'layouts/nav' %>
 
+<script type="text/javascript">
+	
+
+	$(window).resize(function() {
+		$('#pixel-width').html($(window).width()+"px");
+	});
+
+
+</script>
 <div class="container-fluid">
 	
 	<%= yield %>
