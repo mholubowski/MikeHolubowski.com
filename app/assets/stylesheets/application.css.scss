@@ -124,7 +124,7 @@ h1.h1-header {
 .shadow-dark {
 	//-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
 	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	       // box-shadow: 0 7px 24px -3px #2B2B2B; //inset 1px -4px 9px -2px yellow;
+	        box-shadow: 0 7px 24px -3px #2B2B2B; //inset 1px -4px 9px -2px yellow;
 }
 
 .shadow-inset {
@@ -141,17 +141,55 @@ h1.h1-header {
 	background-color:lighten($app-bg-color, 5%);
 	padding: 10px;
 	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+		border: 4px solid $app-bg-color;
 		padding: 1%;
 		min-height: 226px;
 		background-color:lighten($app-bg-color, 10%);
 		margin:5px;
 		&:hover {
-					//background-color:$app-bg-color-white;
+					background-color:$app-bg-color-white;
 					box-shadow: 0 7px 24px -3px #2B2B2B;
+					background-size: 73%;
 		}
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 70%;
 	}
 }
 
+#outfitSystems {
+		background-image: image-url("outfitSystemsLogo.png");
+		background-color: #BEBFC2 !important;
+}
+
+#ivLaundry {
+	background-image: image-url("ivLaundryLogo.png");
+	background-color: #3EC76A !important;
+}
+
+#followAlong {
+	background-image: image-url("followAlongLogo.png");
+	background-color: #008EC0 !important;
+}
+
+#alliedGreeks {
+	background-image: image-url("alliedGreeksLogo.png");
+	background-color: #f5eef4 !important;
+}
+
+#efp {
+	background-image: image-url("efpLogo.png");
+}
+
+#allianceAutoBody {
+	background-image: image-url("allianceAutoBodyLogo.png");
+	background-color: #012B51 !important;
+}
+
+#mikeHo {
+	background-image: image-url("mikeHoLogo.png");
+	background-color: $app-bg-color !important;
+}
 #have-an-idea {
 	margin-left: 25% !important;
 	//margin-top: -25% !important;
@@ -168,4 +206,8 @@ h1.h1-header {
 // }
 
 /* _________________________________________________________ Contact Page */
+
+
+
+
 
