@@ -12,20 +12,25 @@
 <%= render 'layouts/header' %>
 <%= render 'layouts/nav' %>
 
-<script type="text/javascript">
-	
-
-	$(window).resize(function() {
-		$('#pixel-width').html($(window).width()+"px");
-	});
 
 
-</script>
 <div class="container-fluid">
 	
 	<%= yield %>
 </div>
 
+<%= render 'layouts/footer' %>
+<script type="text/javascript">
+	
+	$(document).ready(function() {
+		$('#pixel-width').html("<- "+$(window).width()+"px ->");
+	});
 
+	$(window).resize(function() {
+		$('#pixel-width').html("<- "+$(window).width()+"px ->");
+	});
+
+
+</script>
 </body>
 </html>
