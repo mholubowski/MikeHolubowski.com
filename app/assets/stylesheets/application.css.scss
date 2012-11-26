@@ -121,6 +121,11 @@ h1.h1-header {
 
 /* _________________________________________________________ Projects Page */
 
+ // Breadcrumbs
+h1.h1-header span {
+	font-size:.6em;
+}
+
 .shadow-dark {
 	//-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
 	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;

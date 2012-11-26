@@ -14,8 +14,45 @@
 //= require jquery_ujs
 //= require_tree .
 
-$(document).ready (
-	console.log('it hit')
-	('#header-bar-2').css({'margin-left':'0%'})
+//----------------- Projects
+// $(document).ready(function() {
+//     // load initial content
+//     var $target = $("#projectArea");
+//     $target.load('/projects/outfit #projectArea', function(){
+//         registerlinks($target);
+//     });
 
-	)
+// });
+
+// function loadpage(target, link) {
+//     target.load(link.attr("href"), function(){
+//         registerlinks($target);
+//     });
+// }
+
+// function registerlinks(content) {
+
+//     content.find("a").click(function() {
+//         loadpage(content, $(this));
+//         return false;
+//     });
+// }
+
+
+
+
+function replace() {
+	var $target = $("#projectArea");
+	$("#projectArea").hide('fast');
+	$target.load('/projects/outfit #projectArea');
+	$("#projectArea").show('slow');
+	console.log('click');
+	// loader();
+}
+
+// function loader(){
+
+// 	$("#projectArea").hide('slow', function() {
+//     $("#projectArea").show('slow');
+//   });
+// }
