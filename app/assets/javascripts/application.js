@@ -41,14 +41,57 @@
 
 
 
-function replace() {
+function replace(linkTarget) {
 	var $target = $("#projectArea");
-	$("#projectArea").hide('fast');
-	$target.load('/projects/outfit #projectArea');
-	$("#projectArea").show('slow');
-	console.log('click');
+	$("#projectArea").hide(500, function(){ 
+		$target.load(linkTarget + ' #projectArea');
+		$("#projectArea").show(1000);
+		console.log('click');});
+	
 	// loader();
 }
+
+$(document).ready(function(){
+	
+
+	$('s').on("click", function() {
+				console.log('level1');
+			var linkTarget = ($(this).attr('href'));
+				console.log(linkTarget);
+			$("#projectArea").hide(500, function(){ 
+					history.pushState(null, null, linkTarget);
+					console.log('level2');
+				$("#projectArea").load(linkTarget + ' #projectArea');
+					console.log('level3');
+				$("#projectArea").show(1000);});
+
+		return false;
+	});
+
+	$('x').on("click", function() {
+		console.log('level1')
+		
+		console.log('level2')
+	})
+
+
+
+	
+ });
+
+
+
+// $("li").click(function(){
+// 	console.log('link click')}
+// )
+
+// $("li").click(testtest()); 
+
+// function testtest() {
+// 	  alert("Handler for .click() called.");
+// 	}
+
+ 
 
 // function loader(){
 

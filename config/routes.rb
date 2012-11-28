@@ -9,8 +9,13 @@ Sandbox::Application.routes.draw do
   match '/bio'      => 'home#bio'
   match '/contact'  => 'home#contact'
 
-  match '/projects/outfit' => 'project#outfit'
-
+  match '/projects/outfit'       => 'project#outfit'
+  match '/projects/alliance'     => 'project#alliance' 
+  match '/projects/alliedgreeks' => 'project#alliedgreeks' 
+  match '/projects/efp'          => 'project#efp' 
+  match '/projects/followalong'  => 'project#followalong' 
+  match '/projects/ivlaundry'    => 'project#ivlaundry' 
+  match '/projects/mikeho'       => 'project#mikeho'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
