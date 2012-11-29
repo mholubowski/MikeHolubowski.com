@@ -55,9 +55,14 @@ function urlSwap(linkTarget){
 	history.pushState(null, null, linkTarget);
 }
 
+$(window).resize(function(){$('#width-display').html('width: ' + $(window).width() + 'px') });
+
 
 $(document).ready(function(){
 
+$('#width-display').on('click', function(){
+	console.log('breakpoint ' + $(window).width());
+})
   //***** THIS ~~~~~~~~~~~~~~
 
 	$('#projects a').on("click", function(e){
