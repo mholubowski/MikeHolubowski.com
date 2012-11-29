@@ -15,69 +15,133 @@
 //= require_tree .
 
 //----------------- Projects
-// $(document).ready(function() {
-//     // load initial content
-//     var $target = $("#projectArea");
-//     $target.load('/projects/outfit #projectArea', function(){
-//         registerlinks($target);
-//     });
-
-// });
-
-// function loadpage(target, link) {
-//     target.load(link.attr("href"), function(){
-//         registerlinks($target);
-//     });
-// }
-
-// function registerlinks(content) {
-
-//     content.find("a").click(function() {
-//         loadpage(content, $(this));
-//         return false;
-//     });
-// }
 
 
+function replaceProject(linkTarget) {
+	// $('#projectArea').hide(500, function(){ 
 
+	$('#projectArea').animate({right: '100%'},500, function(){ 
 
-function replace(linkTarget) {
-	var $target = $("#projectArea");
-	$("#projectArea").hide(500, function(){ 
-		$target.load(linkTarget + ' #projectArea');
-		$("#projectArea").show(1000);
-		console.log('click');});
+		$('#projectArea').load(linkTarget + ' ' + '#projectArea');
+		$('#projectArea').animate({right: '0%'},1000, null);
+		urlSwap(linkTarget);
+		});
 	
-	// loader();
 }
 
+function replaceMain(linkTarget) {
+	$('#mainArea').hide(500, function(){ 
+		$('#mainArea').load(linkTarget + ' ' + '#mainArea');
+		$('#mainArea').animate({right: '0%'});
+		urlSwap(linkTarget);
+		});
+	
+}
+
+function urlSwap(linkTarget){
+	history.pushState(null, null, linkTarget);
+}
+
+
 $(document).ready(function(){
-	
 
-	$('s').on("click", function() {
-				console.log('level1');
-			var linkTarget = ($(this).attr('href'));
-				console.log(linkTarget);
-			$("#projectArea").hide(500, function(){ 
-					history.pushState(null, null, linkTarget);
-					console.log('level2');
-				$("#projectArea").load(linkTarget + ' #projectArea');
-					console.log('level3');
-				$("#projectArea").show(1000);});
+  //***** THIS ~~~~~~~~~~~~~~
 
-		return false;
-	});
+	$('#projects a').on("click", function(e){
+		e.preventDefault();
+		replaceProject($(this).attr('href'));
+	 })
 
-	$('x').on("click", function() {
-		console.log('level1')
+	// $('h1.h1-header a').on("click", function(e){
+	// 	e.preventDefault();
+	// 	replaceProject($(this).attr('href'));
+	//  })
+
+	// $('#links a').on("click", function(e){
+	// 	e.preventDefault();
+	// 	replaceMain($(this).attr('href'));
+	//  })
+
+  //***** THIS ~~~~~~~~~~~~~~~
+
+
+
+
+
+
+
+	// $(window).bind("popstate", function(){
+	// 	if (document.referrer.substr(-8) == 'projects'){
+	// 	replace(location.pathname);
+	// 	}
+	// })
+
+
+
+
+
+	// $('x').on("click", function() {
+	// 			console.log('level1');
+	// 		var linkTarget = ($(this).attr('href'));
+	// 			console.log(linkTarget);
+	// 		$("#projectArea").hide(500, function(){ 
+	// 				history.pushState(null, null, linkTarget);
+	// 				console.log('level2');
+	// 			$("#projectArea").load(linkTarget + ' #projectArea');
+	// 				console.log('level3');
+	// 			$("#projectArea").show(1000);});
+
+	// 	return false;
+	// });
+
+	// $('x').on("click", function() {
+	// 	console.log('level1')
 		
-		console.log('level2')
-	})
+	// 	console.log('level2')
+	// })
 
 
+	// $(window).bind("popstate", function() { 
+	// 	// window.history.back(); 
+	// 	urlLocation = location.href.substr(-8);
+	// 	urlReferrer = document.referrer
+	// 	console.log("current:" + urlLocation);
+	// 	console.log("referrer:" + urlReferrer);
+	// 	console.log(urlReferrer.substr(-8));
 
+	// 	console.log( urlLocation == 'projects'					);
+	// 	console.log( urlReferrer.indexOf('projects/') == -1    );
+	// 	console.log( urlLocation == urlReferrer.substr(-8)     );
+
+	// 	if (urlLocation == 'projects' && urlReferrer.indexOf('projects/') == -1 && urlLocation == urlReferrer.substr(-8))
+	// 		{
+	// 		console.log('yes');
+	// 		replace('projects');
+	// 		}
+	// 	else {
+	// 		console.log('else');
+	// 		}
+
+	// 		}
+		
+	// );
 	
+	// $(window).bind("popstate", function(){
+	// 	console.log(location.href.substr(-8));
+	// 	console.log(document.referrer);
+	// 	t = 0;
+	// 	if (location.href.substr(-8) == 'projects' && t < 1)
+	// 	{
+	// 	window.location = location.href;
+	// 	t++;
+	// 	}
+	// })
+
  });
+
+
+// Note: preventDefault
+
 
 
 
