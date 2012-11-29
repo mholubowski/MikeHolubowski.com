@@ -29,6 +29,19 @@ function replaceProject(linkTarget) {
 	
 }
 
+function goBack(linkTarget) {
+	// $('#projectArea').hide(500, function(){ 
+		console.log('level2');
+
+	$('#projectArea').animate({right: '100%'},500, function(){ 
+
+		$('#projectArea').load(linkTarget + ' ' + '#projectArea');
+		$('#projectArea').animate({right: '0%'},1000, null);
+		urlSwap(linkTarget);
+		});
+	
+}
+
 function replaceMain(linkTarget) {
 	$('#mainArea').hide(500, function(){ 
 		$('#mainArea').load(linkTarget + ' ' + '#mainArea');
@@ -51,6 +64,12 @@ $(document).ready(function(){
 		e.preventDefault();
 		replaceProject($(this).attr('href'));
 	 })
+
+	// $('#goBack').on("click", function(e){
+	// 	console.log('level1');
+	// 	goBack($(this).attr('href'));
+	// 	e.preventDefault();
+	//  })
 
 	// $('h1.h1-header a').on("click", function(e){
 	// 	e.preventDefault();

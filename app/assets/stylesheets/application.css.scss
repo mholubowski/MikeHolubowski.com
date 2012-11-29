@@ -120,6 +120,9 @@ h1.h1-header {
 }
 
 /* _________________________________________________________ Projects Page */
+#projectArea{
+	position:relative;
+}
 
  // Breadcrumbs
 h1.h1-header span {
@@ -127,9 +130,9 @@ h1.h1-header span {
 }
 
 .shadow-dark {
-	//-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
+	 -webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
 	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	        box-shadow: 0 7px 24px -3px #2B2B2B; //inset 1px -4px 9px -2px yellow;
+	        box-shadow: 0 7px 24px -3px #2B2B2B; 
 }
 
 .shadow-inset {
@@ -206,6 +209,94 @@ h1.h1-header span {
 	border: 1px dashed gray;
 
 }
+
+/* Each Project Page------------------ */
+
+#project-description{
+	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
+		min-height: 150px;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: 70%;
+		ul{
+			padding: 10px;
+		}
+	}
+	div.span5.full-bg{
+		min-height: 250px;
+		background-size: 100%;
+		@extend .shadow-dark;
+	}
+	div.row-fluid{
+		margin: 40px 0px;
+	}
+	p{
+		color: $code-yellow;
+		padding: 15px;
+	}
+
+	#site-link {
+		float:right;
+		color: $code-blue;
+		padding:15px;
+		background-color: lighten($app-bg-color,40%);
+
+		&:hover{
+			background-color: lighten($app-bg-color,55%);
+			cursor: hand;
+			cursor: pointer;
+		}
+	}
+
+
+
+
+  /* Images */
+	#outfitPic1{
+		background-image: image-url("outfitPic1.png");
+	}
+	#outfitPic2{
+		background-image: image-url("outfitPic2.png");
+	}
+	#outfitPic3{
+		background-image: image-url("outfitPic3.png");
+	}
+
+
+	#ivLaundryPic1{
+		background-image: image-url("ivLaundryPic1.png");
+	}
+	#ivLaundryPic2{
+		background-image: image-url("ivLaundryPic3.png");
+	}
+	#ivLaundryPic3{
+		background-image: image-url("ivLaundryPic2.png");
+	}
+
+
+	#alliedGreeksPic1{
+		background-image: image-url("alliedGreeksPic1.png");
+	}
+	#alliedGreeksPic2{
+		background-image: image-url("alliedGreeksPic2.png");
+	}
+	#alliedGreeksPic3{
+		background-image: image-url("alliedGreeksPic3.png");
+	}
+
+	#followAlongPic1{
+		background-image: image-url("followAlongPic1.png");
+	}
+	#followAlongPic2{
+		background-image: image-url("followAlongPic2.png");
+	}
+}
+
+
+
+
+
+
 // #projects .span5 {
 // 	min-height: 126px;
 // }
