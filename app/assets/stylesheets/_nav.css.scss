@@ -1,10 +1,27 @@
 @import "variables";
 
-#nav.shadow {
-	-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
-	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	        box-shadow: 0 7px 24px -3px #2B2B2B;
+div.container-fluid.nav-con {
+	padding-left:6px;
+	padding-right:6px;
 }
+
+#nav {
+	margin-top:20px;
+	&.shadow {
+		-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
+	  	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
+	            box-shadow: 0 7px 24px -3px #2B2B2B;
+	    }
+
+	div.span4.myName {
+		text-align: center;
+		margin-top: 21px;
+		h1.code-yellow {
+			font-weight: 100;
+		}
+	}
+}
+
 
 #links {
 	float:right;

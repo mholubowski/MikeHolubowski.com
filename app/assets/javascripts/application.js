@@ -18,57 +18,89 @@
 
 
 function replaceProject(linkTarget) {
-	// $('#projectArea').hide(500, function(){ 
-
-	$('#projectArea').animate({right: '100%'},500, function(){ 
-
-		$('#projectArea').load(linkTarget + ' ' + '#projectArea');
-		$('#projectArea').animate({right: '0%'},1000, null);
+	var area = $('#projectArea');
+	area.animate({right: '100%'}, 500, function() { 
+		area.load(linkTarget + ' ' + '#projectArea');
+		area.animate({right: '0%'},1000, null);
 		urlSwap(linkTarget);
-		});
-	
+	});
 }
 
-function goBack(linkTarget) {
-	// $('#projectArea').hide(500, function(){ 
-		console.log('level2');
-
-	$('#projectArea').animate({right: '100%'},500, function(){ 
-
-		$('#projectArea').load(linkTarget + ' ' + '#projectArea');
-		$('#projectArea').animate({right: '0%'},1000, null);
-		urlSwap(linkTarget);
-		});
-	
-}
-
-function replaceMain(linkTarget) {
-	$('#mainArea').hide(500, function(){ 
-		$('#mainArea').load(linkTarget + ' ' + '#mainArea');
-		$('#mainArea').animate({right: '0%'});
-		urlSwap(linkTarget);
-		});
-	
-}
 
 function urlSwap(linkTarget){
 	history.pushState(null, null, linkTarget);
 }
 
-$(window).resize(function(){$('#width-display').html('width: ' + $(window).width() + 'px') });
+$(window).resize(function() {
+	$('#width-display').html('width: ' + $(window).width() + 'px') 
+});
 
 
-$(document).ready(function(){
 
-$('#width-display').on('click', function(){
-	console.log('breakpoint ' + $(window).width());
-})
-  //***** THIS ~~~~~~~~~~~~~~
+$(document).ready(function() {
 
-	$('#projects a').on("click", function(e){
+	$('#projects a').on("click", function(e) {
 		e.preventDefault();
 		replaceProject($(this).attr('href'));
-	 })
+	})
+
+	// Browser Width for working w/ breakpoints
+	$('#width-display').html('width: ' + $(window).width() + 'px') 
+
+	$('#width-display').on('click', function() {
+		console.log('breakpoint ' + $(window).width());
+	})
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function goBack(linkTarget) {
+// 	$('#projectArea').animate({right: '100%'},500, function(){ 
+// 		$('#projectArea').load(linkTarget + ' ' + '#projectArea');
+// 		$('#projectArea').animate({right: '0%'},1000, null);
+// 		urlSwap(linkTarget);
+// 		});
+	
+// }
+
+// function replaceMain(linkTarget) {
+// 	$('#mainArea').hide(500, function(){ 
+// 		$('#mainArea').load(linkTarget + ' ' + '#mainArea');
+// 		$('#mainArea').animate({right: '0%'});
+// 		urlSwap(linkTarget);
+// 		});
+	
+// }
+
+
 
 	// $('#goBack').on("click", function(e){
 	// 	console.log('level1');
@@ -161,7 +193,6 @@ $('#width-display').on('click', function(){
 	// 	}
 	// })
 
- });
 
 
 // Note: preventDefault

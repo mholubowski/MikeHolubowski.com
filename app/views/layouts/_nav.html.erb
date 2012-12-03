@@ -1,30 +1,35 @@
 
+<div class="container-fluid nav-con">
+	<div id="nav" class="row-fluid shadow">
 
-<div class="container-fluid" style="padding-left:6px; padding-right:6px;">
-	<div id="nav" class="row-fluid shadow" style="margin-top:20px;">
-		<div class="span4" style="text-align:center; margin-top:21px;">
-			<h1 class="code-yellow" style="font-weight:100;">Mike Holubowski</h1>
+		<!-- "Mike Holubowski" -->
+		<div class="span4 myName" >
+			<h1 class="code-yellow">Mike Holubowski</h1>
 			<hr style="margin-top:4px;">
 			<hr style="width:90%;">
-			
 			<h4 id="width-display"></h4>
-			
 		</div>
+
+		<!-- Gravatar -->
 		<div class="span4" style="text-align:center">
 			<img src="http://www.gravatar.com/avatar/76743e4c14368f817ea4fff3c7e72b34.png?s=125" alt="Mike Holubowski - Gravatar" />
 			<p>gravatar</p>
-			
 		</div>
+
+		<!-- Typed heading -->
 		<div class="span4" style="margin-top:32px;">
 			<div style="margin:0 auto;">
-			<h4 class="code-yellow typed">
+				<h4 class="code-yellow typed">
 
-				<%= 
+					<%= 
 					case 
 						when params[:action] == 'home'
 							"Still a work in progress.."
 
 						when params[:action] == 'projects'
+							"Past and present projects" 
+
+						when params[:controller] == 'project'
 							"Past and present projects" 
 
 						when params[:action] == 'skills'
@@ -37,41 +42,33 @@
 							"Feel free to contact me!"
 					end
 
-				 %>	<span>&nbsp;</span>
-				<!-- Student <em>of</em> Web Development <span>&nbsp;</span> -->
+					%>	<span>&nbsp;</span>
 
-
-
-			</h4>
+				</h4>
 			</div>
-
 			<br>
 			<hr>
 			<hr style="width:90%; margin-left:10%;">
+
+			<!-- Page Navigation -->
 			<div id="links">
 				<br>
 				<br>
 				<h4> 
-				   
-					
+					<%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
+					<%= link_to "//projects", projects_path if params[:action] != 'projects' %> 
 
-					 <%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
-					  <%= link_to "//projects", projects_path if params[:action] != 'projects'  %> 
+					<%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
+					<%= link_to "//skills", skills_path if params[:action] != 'skills' %>
 
-					  <%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
-					<%=   link_to "//skills", skills_path if params[:action] != 'skills' %>
+					<%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio' %>  
+					<%= link_to "//bio", bio_path if params[:action] != 'bio' %>
 
-					 <%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio'%>  
-					 <%=  link_to "//bio", bio_path if params[:action] != 'bio'   %>
-
-					 <%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact'%>  
-					 <%=  link_to "//contact", contact_path if params[:action] != 'contact'   %>
-					 
-					  			
-
-
-																		</h4>
+					<%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact' %>  
+					<%= link_to "//contact", contact_path if params[:action] != 'contact' %>
+				</h4>
 			</div>
+
 		</div>
 	</div>
-</div>
+</div>   

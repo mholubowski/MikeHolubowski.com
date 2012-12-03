@@ -23,7 +23,7 @@ body {
 	background-color: $app-bg-color;
 	font-family: "Andale Mono", AndaleMono, monospace;
 	color: $code-black;
-
+	padding-bottom:20px;
 }
 
 div.container-fluid {
@@ -120,6 +120,7 @@ h1.h1-header {
 }
 
 /* _________________________________________________________ Projects Page */
+
 #projectArea{
 	position:relative;
 }
@@ -294,16 +295,19 @@ h1.h1-header span {
 
 
 
-
-
-
-// #projects .span5 {
-// 	min-height: 126px;
-// }
-
 /* _________________________________________________________ Contact Page */
 
 
+div.span3.well.contactWell {
+	text-align:center;
 
+	h3{
+		color: $code-blue;
+		font-size: .9em;
+	}
+	h4{
+		margin-top: 40px;
+	}
+}
 
 
