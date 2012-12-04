@@ -20,9 +20,12 @@
 function replaceProject(linkTarget) {
 	var area = $('#projectArea');
 	area.animate({right: '100%'}, 500, function() { 
-		area.load(linkTarget + ' ' + '#projectArea');
+		area.load(linkTarget + ' ' + '#projectArea', function(){
+
 		area.animate({right: '0%'},1000, null);
 		urlSwap(linkTarget);
+			
+		});
 	});
 }
 
