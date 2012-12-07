@@ -12,27 +12,28 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require_tree .
 
 //----------------- Projects
 
 
-function replaceProject(linkTarget) {
-	var area = $('#projectArea');
-	area.animate({right: '100%'}, 500, function() { 
-		area.load(linkTarget + ' ' + '#projectArea', function(){
+// function replaceProject(linkTarget) {
+// 	var area = $('#projectArea');
+// 	area.animate({right: '100%'}, 500, function() { 
+// 		area.load(linkTarget + ' ' + '#projectArea', function(){
 
-		area.animate({right: '0%'},1000, null);
-		urlSwap(linkTarget);
+// 		area.animate({right: '0%'},1000, null);
+// 		urlSwap(linkTarget);
 			
-		});
-	});
-}
+// 		});
+// 	});
+// }
 
 
-function urlSwap(linkTarget){
-	history.pushState(null, null, linkTarget);
-}
+// function urlSwap(linkTarget){
+// 	history.pushState(null, null, linkTarget);
+// }
 
 $(window).resize(function() {
 	$('#width-display').html('width: ' + $(window).width() + 'px') 
@@ -42,10 +43,16 @@ $(window).resize(function() {
 
 $(document).ready(function() {
 
-	$('#projects a').on("click", function(e) {
-		e.preventDefault();
-		replaceProject($(this).attr('href'));
-	})
+	// $('#projects a').on('click', function(e){
+	// 	e.preventDefault();
+	// 	$('#projectArea').animate({right: '100%'}, 100, null);
+	// 	this.click();
+	// })
+
+	// $('#projects a').on("click", function(e) {
+	// 	e.preventDefault();
+	// 	replaceProject($(this).attr('href'));
+	// })
 
 	// Browser Width for working w/ breakpoints
 	$('#width-display').html('width: ' + $(window).width() + 'px') 
