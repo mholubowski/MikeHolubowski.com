@@ -7,7 +7,8 @@
 			<%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
 			<hr style="margin-top:4px;">
 			<hr style="width:90%;">
-			<h4 id="width-display"></h4>
+			<h4 class="code-blue">Web Development / Technology Management</h4>
+			<!-- <h4 id="width-display"></h4> --> 
 		</div>
 
 		<!-- Gravatar -->
@@ -27,6 +28,10 @@
 
 					<%= 
 					case 
+
+					when params[:action] == 'intro'
+						"Clever clever clever words"
+							
 					when params[:action] == 'home'
 						"Still a work in progress.."
 
@@ -59,17 +64,20 @@
 				<br>
 				<br>
 				<h4> 
+					<%= link_to "intro", root_url, class: 'active' if params[:action] == 'intro' %> 
+					<%= link_to raw("&raquo; intro"), root_url if params[:action] != 'intro' %>
+
 					<%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
-					<%= link_to "//projects", projects_path if params[:action] != 'projects' %> 
+					<%= link_to raw("&raquo; projects"), projects_path if params[:action] != 'projects' %> 
 
 					<%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
-					<%= link_to "//skills", skills_path if params[:action] != 'skills' %>
+					<%= link_to raw("&raquo; skills"), skills_path if params[:action] != 'skills' %>
 
 					<%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio' %>  
-					<%= link_to "//bio", bio_path if params[:action] != 'bio' %>
+					<%= link_to raw("&raquo; bio"), bio_path if params[:action] != 'bio' %>
 
 					<%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact' %>  
-					<%= link_to "//contact", contact_path if params[:action] != 'contact' %>
+					<%= link_to raw("&raquo; contact"), contact_path if params[:action] != 'contact' %>
 				</h4>
 			</div>
 

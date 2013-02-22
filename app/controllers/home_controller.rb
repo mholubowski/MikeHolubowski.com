@@ -1,10 +1,15 @@
 class HomeController < ApplicationController
 
-
-	def home
+	def bio
 	end
 
-	def styleTest
+	def contact
+	end
+
+	def intro
+	end
+
+	def home
 	end
 
 	def projects
@@ -13,10 +18,7 @@ class HomeController < ApplicationController
 	def skills
 	end
 
-	def bio
+	def styleTest
 	end
-
-	def contact
-	end
-
+	
 end

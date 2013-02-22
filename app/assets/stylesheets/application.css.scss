@@ -13,18 +13,37 @@
  */
 @import "bootstrap";
 @import "bootstrap-responsive";
-@import "font-awesome";
+// @import "font-awesome";
  
 /* App Wide Variable */
 @import "variables";
 
-
+a:hover{
+	text-decoration: none;
+}
 
 body {
 	background-color: $app-bg-color;
-	font-family: "Andale Mono", AndaleMono, monospace;
+	font-weight: 200;
+	// font-family: "Andale Mono", AndaleMono, monospace;
 	color: $code-black;
-	padding-bottom:20px;
+	// padding-bottom:20px;
+
+	h1,h2,h3,h4,h5,h6{
+		font-weight: 300;
+	}
+}
+
+.align-left{
+	text-align: left;
+}
+
+.align-right{
+	text-align: left;
+}
+
+.align-center{
+	text-align: center;
 }
 
 div.container-fluid {
@@ -41,7 +60,7 @@ div.container-fluid {
 
 hr {
 	border-bottom:none;
-	border-top:1px solid #6F6D6D;
+	border-top:1px solid #bbb;
 	margin: 10px 0px;
 	&.dashed{
 		border-top:1px dashed #6F6D6D;
@@ -124,184 +143,6 @@ h1.h1-header {
 
 /* _________________________________________________________ Projects Page */
 
-#projectArea{
-	position:relative;
-}
-
- // Breadcrumbs
-h1.h1-header {
-	a{
-		box-shadow: inset 1px 1px 2px 1px #bbb;
-		padding: 3px;
-		margin-right: 5px;
-	}
-	span {
-		font-size:.6em;
-		margin-left: -10px;
-	}
-}
-.shadow-dark {
-	 -webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
-	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	        box-shadow: 0 7px 24px -3px #2B2B2B; 
-}
-
-.shadow-inset {
-   -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
-}
-
-.bg-white {
-	background-color: lighten($app-bg-color, 20%);
-}
-
-#projects {
-	background-color:lighten($app-bg-color, 5%);
-	padding: 10px;
-	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
-		border: 4px solid darken($app-bg-color, 2%);
-		padding: 1%;
-		min-height: 226px;
-		background-color:lighten($app-bg-color, 10%);
-		margin:5px;
-		&:hover {
-					background-color:$app-bg-color-white;
-					box-shadow: 0 4px 22px -6px white;
-					background-size: 71%;
-		}
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 70%;
-	}
-}
-
-#outfitSystems {
-		background-image: image-url("outfitSystemsLogo.png");
-		background-color: #C56C4A !important;
-}
-
-#ivLaundry {
-	background-image: image-url("ivLaundryLogo.png");
-	background-color: #3EC76A !important;
-}
-
-#followAlong {
-	background-image: image-url("followAlongLogo.png");
-	background-color: #008EC0 !important;
-}
-
-#alliedGreeks {
-	background-image: image-url("alliedGreeksLogo.png");
-	background-color: #f5eef4 !important;
-}
-
-#efp {
-	background-image: image-url("efpLogo.png");
-}
-
-#allianceAutoBody {
-	background-image: image-url("allianceAutoBodyLogo.png");
-	background-color: #012B51 !important;
-}
-
-#mikeHo {
-	background-image: image-url("mikeHoLogo.png");
-	background-color: $app-bg-color !important;
-}
-#have-an-idea {
-	margin-left: 25% !important;
-	//margin-top: -25% !important;
-	min-height:157px !important;
-	-webkit-box-shadow: none;
-	   -moz-box-shadow: none;
-	        box-shadow: none;
-	        background-color:lighten($app-bg-color, 5%) !important;
-	border: 1px dashed gray;
-
-}
-
-/* Each Project Page------------------ */
-
-#project-description{
-	.span1, .span2, .span3, .span4, .span5, .span6, .span7, .span8, .span9, .span10, .span11, .span12 {
-		min-height: 150px;
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: 70%;
-		ul{
-			padding: 10px;
-		}
-	}
-	div.span5.full-bg{
-		min-height: 250px;
-		background-size: 100%;
-		@extend .shadow-dark;
-	}
-	div.row-fluid{
-		margin: 40px 0px;
-	}
-	p{
-		color: $code-yellow;
-		padding: 15px;
-	}
-
-	#site-link {
-		float:right;
-		color: $code-blue;
-		padding:15px;
-		background-color: lighten($app-bg-color,40%);
-
-		&:hover{
-			background-color: lighten($app-bg-color,55%);
-			cursor: hand;
-			cursor: pointer;
-		}
-	}
-
-
-
-
-  /* Images */
-	#outfitPic1{
-		background-image: image-url("outfitPic1.png");
-	}
-	#outfitPic2{
-		background-image: image-url("outfitPic2.png");
-	}
-	#outfitPic3{
-		background-image: image-url("outfitPic3.png");
-	}
-
-
-	#ivLaundryPic1{
-		background-image: image-url("ivLaundryPic1.png");
-	}
-	#ivLaundryPic2{
-		background-image: image-url("ivLaundryPic3.png");
-	}
-	#ivLaundryPic3{
-		background-image: image-url("ivLaundryPic2.png");
-	}
-
-
-	#alliedGreeksPic1{
-		background-image: image-url("alliedGreeksPic1.png");
-	}
-	#alliedGreeksPic2{
-		background-image: image-url("alliedGreeksPic2.png");
-	}
-	#alliedGreeksPic3{
-		background-image: image-url("alliedGreeksPic3.png");
-	}
-
-	#followAlongPic1{
-		background-image: image-url("followAlongPic1.png");
-	}
-	#followAlongPic2{
-		background-image: image-url("followAlongPic2.png");
-	}
-}
 
 
 

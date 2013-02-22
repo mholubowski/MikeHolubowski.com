@@ -1,21 +1,22 @@
 Sandbox::Application.routes.draw do
 
-  root to: 'home#projects'
+  root to: 'home#intro'
   get "greetings/hello"
 
-  match '/style'    => 'home#styleTest'
-  match '/projects' => 'home#projects'
-  match '/skills'   => 'home#skills'
   match '/bio'      => 'home#bio'
   match '/contact'  => 'home#contact'
+  match '/intro'    => 'home#intro'
+  match '/projects' => 'home#projects'
+  match '/skills'   => 'home#skills'
+  match '/style'    => 'home#styleTest'
 
-  match '/projects/outfit'       => 'project#outfit'
   match '/projects/alliance'     => 'project#alliance' 
   match '/projects/alliedgreeks' => 'project#alliedgreeks' 
   match '/projects/efp'          => 'project#efp' 
   match '/projects/followalong'  => 'project#followalong' 
   match '/projects/ivlaundry'    => 'project#ivlaundry' 
   match '/projects/mikeho'       => 'project#mikeho'
+  match '/projects/outfit'       => 'project#outfit'
 
 
   # The priority is based upon order of creation:
