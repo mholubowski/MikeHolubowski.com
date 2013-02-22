@@ -128,10 +128,17 @@ h1.h1-header {
 }
 
  // Breadcrumbs
-h1.h1-header span {
-	font-size:.6em;
+h1.h1-header {
+	a{
+		box-shadow: inset 1px 1px 2px 1px #bbb;
+		padding: 3px;
+		margin-right: 5px;
+	}
+	span {
+		font-size:.6em;
+		margin-left: -10px;
+	}
 }
-
 .shadow-dark {
 	 -webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
 	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;

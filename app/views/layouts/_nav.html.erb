@@ -4,7 +4,7 @@
 
 		<!-- "Mike Holubowski" -->
 		<div class="span4 myName" >
-			<h1 class="code-yellow">Mike Holubowski</h1>
+			<%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
 			<hr style="margin-top:4px;">
 			<hr style="width:90%;">
 			<h4 id="width-display"></h4>
@@ -12,8 +12,12 @@
 
 		<!-- Gravatar -->
 		<div class="span4" style="text-align:center">
-			<img src="http://www.gravatar.com/avatar/76743e4c14368f817ea4fff3c7e72b34.png?s=125" alt="Mike Holubowski - Gravatar" />
-			<p>gravatar</p>
+			<a href="http://www.linkedin.com/pub/mike-holubowski/49/9a4/927">
+				<img src="http://www.gravatar.com/avatar/76743e4c14368f817ea4fff3c7e72b34.png?s=125" alt="Mike Holubowski" />
+			</a>
+			
+			<%= link_to image_tag('linkedin.png'), "http://www.linkedin.com/pub/mike-holubowski/49/9a4/927" %>
+
 		</div>
 
 		<!-- Typed heading -->
@@ -23,23 +27,23 @@
 
 					<%= 
 					case 
-						when params[:action] == 'home'
-							"Still a work in progress.."
+					when params[:action] == 'home'
+						"Still a work in progress.."
 
-						when params[:action] == 'projects'
-							"Past and present projects" 
+					when params[:action] == 'projects'
+						"Past and present projects" 
 
-						when params[:controller] == 'project'
-							"Past and present projects" 
+					when params[:controller] == 'project'
+						"Past and present projects" 
 
-						when params[:action] == 'skills'
-							"An honest assesment of skills"
+					when params[:action] == 'skills'
+						"An honest assesment of skills"
 
-						when params[:action] == 'bio'
-							"A bit about who I am today.."
+					when params[:action] == 'bio'
+						"A bit about who I am today.."
 
-						when params[:action] == 'contact'
-							"Feel free to contact me!"
+					when params[:action] == 'contact'
+						"Feel free to contact me!"
 					end
 
 					%>	<span>&nbsp;</span>
