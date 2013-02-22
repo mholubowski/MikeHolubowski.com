@@ -10,7 +10,6 @@ gem 'jquery-rails', '2.0.2'
 
 gem 'turbolinks'
 
-
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
@@ -35,6 +34,8 @@ end
 
 group :production do
   gem 'pg', '0.12.2'
+  gem 'newrelic_rpm'
+
 end
 
 # To use ActiveModel has_secure_password
