@@ -5,16 +5,17 @@ $G-Green:  #00933B;
 
 div.slogan{
 	text-align:center;
-	padding: 30px;
-	margin: 30px 20px;
+	// padding: 30px;
+	// margin: 30px 20px;
 
 	font-size: 4.6em;
 	font-weight: 100;
+	line-height: 80%;
 	&.center{
 		clear:both;
 	}
 	span{
-		margin-right: -13px;
+		// margin-right: -13px;
 		&.blue{
 			color: $G-Blue;
 			// color: #FFD573;
@@ -43,6 +44,11 @@ div.slogan{
 	}
 }
 
+div.asterisk{
+	span{
+		font-size: 5.0em;
+	}
+}
 
 div.bottom{
 	width: 100%;

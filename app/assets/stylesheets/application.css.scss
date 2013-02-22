@@ -11,8 +11,8 @@
  *= require_self
  *= require_tree .
  */
-@import "bootstrap";
-@import "bootstrap-responsive";
+@import "twitter/bootstrap";
+@import "twitter/bootstrap/responsive";
 // @import "font-awesome";
  
 /* App Wide Variable */
@@ -28,7 +28,6 @@ body {
 	// font-family: "Andale Mono", AndaleMono, monospace;
 	color: $code-black;
 	// padding-bottom:20px;
-
 	h1,h2,h3,h4,h5,h6{
 		font-weight: 300;
 	}

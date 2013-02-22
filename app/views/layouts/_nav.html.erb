@@ -13,8 +13,7 @@
 
 		<!-- Gravatar -->
 		<div class="span4" style="text-align:center">
-			<a href="http://www.linkedin.com/pub/mike-holubowski/49/9a4/927">
-				<img src="http://www.gravatar.com/avatar/76743e4c14368f817ea4fff3c7e72b34.png?s=125" alt="Mike Holubowski" />
+			<%= image_tag 'mike.jpeg', alt: 'Mike Holubowki at Economic Summit, SB', class: 'mike' %>
 			</a>
 			
 			<%= link_to image_tag('linkedin.png'), "http://www.linkedin.com/pub/mike-holubowski/49/9a4/927" %>
@@ -23,7 +22,7 @@
 
 		<!-- Typed heading -->
 		<div class="span4" style="margin-top:32px;">
-			<div style="margin:0 auto;">
+			<div class="visible-" style="margin:0 auto;">
 				<h4 class="code-yellow typed">
 
 					<%= 
@@ -31,7 +30,7 @@
 
 					when params[:action] == 'intro'
 						"Clever clever clever words"
-							
+
 					when params[:action] == 'home'
 						"Still a work in progress.."
 
@@ -63,24 +62,25 @@
 			<div id="links">
 				<br>
 				<br>
-				<h4> 
-					<%= link_to "intro", root_url, class: 'active' if params[:action] == 'intro' %> 
-					<%= link_to raw("&raquo; intro"), root_url if params[:action] != 'intro' %>
+				<ul> 
 
-					<%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
-					<%= link_to raw("&raquo; projects"), projects_path if params[:action] != 'projects' %> 
+					<li><%= link_to "intro", root_url, class: 'active' if params[:action] == 'intro' %> 
+						<%= link_to raw("&raquo; intro"), root_url if params[:action] != 'intro' %></li>
 
-					<%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
-					<%= link_to raw("&raquo; skills"), skills_path if params[:action] != 'skills' %>
+						<li><%= link_to "projects", projects_path, class: 'active' if params[:action] == 'projects' %> 
+							<%= link_to raw("&raquo; projects"), projects_path if params[:action] != 'projects' %> </li>
 
-					<%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio' %>  
-					<%= link_to raw("&raquo; bio"), bio_path if params[:action] != 'bio' %>
+							<li><%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
+								<%= link_to raw("&raquo; skills"), skills_path if params[:action] != 'skills' %></li>
 
-					<%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact' %>  
-					<%= link_to raw("&raquo; contact"), contact_path if params[:action] != 'contact' %>
-				</h4>
-			</div>
+								<li><%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio' %>  
+									<%= link_to raw("&raquo; bio"), bio_path if params[:action] != 'bio' %></li>
 
-		</div>
-	</div>
-</div>   
+									<li><%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact' %>  
+										<%= link_to raw("&raquo; contact"), contact_path if params[:action] != 'contact' %></li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>   

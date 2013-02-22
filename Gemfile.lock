@@ -30,7 +30,9 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
-    bootstrap-sass (2.0.4.0)
+    bootstrap-sass-rails (2.3.0.0)
+      railties (>= 3.1.0)
+      sass-rails (>= 3.1.0)
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.4)
@@ -155,7 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
-  bootstrap-sass (= 2.0.4)
+  bootstrap-sass-rails
   bootstrap-will_paginate (= 0.0.6)
   coffee-rails (= 3.2.2)
   faker (= 1.0.1)

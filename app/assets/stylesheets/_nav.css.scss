@@ -10,9 +10,9 @@ div.container-fluid.nav-con {
 	margin-bottom: 10px;
 	&.shadow {
 		-webkit-box-shadow: 0 7px 24px -3px #2B2B2B;
-	  	   -moz-box-shadow: 0 7px 24px -3px #2B2B2B;
-	            box-shadow: 0 7px 24px -3px #2B2B2B;
-	    }
+		-moz-box-shadow: 0 7px 24px -3px #2B2B2B;
+		box-shadow: 0 7px 24px -3px #2B2B2B;
+	}
 
 	div.span4.myName {
 		text-align: center;
@@ -21,31 +21,62 @@ div.container-fluid.nav-con {
 			font-weight: 100;
 		}
 	}
+
+	img.mike{
+		width: 125px;
+		padding-top: 10px;
+		margin-left: 15%;
+	}
 }
 
 
 #links {
-	float:right;
-	margin-right:20px;
-
-	a {
-		color: $code-black;
-		&:hover{
-			text-decoration: none;
-			color: $code-yellow;
-		}
-		.active {
-			margin-left: 10px;
-			color: $code-yellow !important;
+	// float:right;
+	// margin-right:20px;
+	// text-align: center;
+	ul{
+			display: inline;
+		li{
+				display: inline;
+			a {
+				color: $code-black;
+				&:hover{
+					text-decoration: none;
+					color: $code-yellow;
+				}
+				.active {
+					// margin-left: 10px;
+					color: $code-yellow !important;
+				}
 			}
+		}
 	}
 
-	}
+}
 
 
 .active {
-			margin-left: 10px;
-			margin-right: 10px;
+	margin-left: 10px;
+	margin-right: 10px;
 
-			color: $code-yellow !important;
-			}
+	color: $code-yellow !important;
+}
+
+
+// *** ---------- Media Queries ----------- ***
+
+@media screen and (max-width:1200px) {
+
+}
+
+
+@media screen and (max-width: 979px) {
+
+}
+
+@media screen and (max-width: 767px){
+
+}
+
+@media screen and (max-width: 480px){	
+}

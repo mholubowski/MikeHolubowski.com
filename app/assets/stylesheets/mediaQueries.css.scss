@@ -1,36 +1,51 @@
-
-
-@media screen and (max-width:1070px) {
-
-	#links h4 a {
-		font-size: 12px;
+	div.slogan{
+		background-color: green;
 	}
 
-	h4.typed {
-		font-size: .9em !important;
-		margin-left: 15px !important;
-	}
-}
+@media screen and (max-width:1200px) {
 
+	// #links h4 a {
+	// 	font-size: 12px;
+	// }
 
-@media screen and (max-width:766px) {
+	// h4.typed {
+	// 	font-size: .9em !important;
+	// 	margin-left: 15px !important;
+	// }
 
-	h4.typed {
-		font-size: 1.0em !important;
-		margin-left: 10% !important;
-	}
-
-	.contactWell img {
-		max-width: 60%;
+	div.slogan{
+		background-color: red;
 	}
 }
 
 
-// @media screen and (max-width:) {
+@media screen and (max-width: 979px) {
 
-	
-// }
+	// h4.typed {
+	// 	font-size: 1.0em !important;
+	// 	margin-left: 10% !important;
+	// }
 
+	// .contactWell img {
+	// 	max-width: 60%;
+	// }
 
+	div.slogan{
+		background-color: orange;
+	}
+}
 
-// 1070 nav breaks down a line
+@media screen and (max-width: 767px){
+		div.slogan{
+		background-color: purple;
+	}
+
+}
+
+@media screen and (max-width: 480px){
+	div.slogan{
+		background-color: yellow;
+		font-size: 3.0em;
+		font-style: light;
+	}
+}
