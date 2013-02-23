@@ -6,7 +6,7 @@ $G-Green:  #00933B;
 div.slogan{
 	text-align:center;
 	// padding: 30px;
-	// margin: 30px 20px;
+	margin: 30px 0;
 
 	font-size: 4.6em;
 	font-weight: 100;
@@ -57,4 +57,40 @@ div.bottom{
 	box-shadow: 1px 0px 10px #bbbbbb;
 	border-bottom: 40px solid #888;
 
+}
+
+// *** ----------- Media Queries ---------- *** 
+div.slogan{
+	border-left: ridge 4px green;
+}
+
+@media screen and (max-width:1200px) {
+
+	div.slogan{
+		border-left: ridge 4px red;
+	}
+}
+
+
+@media screen and (max-width: 979px) {
+
+
+	div.slogan{
+		border-left: ridge 4px orange;
+	}
+}
+
+@media screen and (max-width: 767px){
+	div.slogan{
+		border-left: ridge 4px purple;
+	}
+
+}
+
+@media screen and (max-width: 480px){
+	div.slogan{
+		border-left: ridge 4px yellow;
+		font-size: 3.0em;
+		font-style: light;
+	}
 }

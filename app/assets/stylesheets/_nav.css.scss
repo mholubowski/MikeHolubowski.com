@@ -16,7 +16,7 @@ div.container-fluid.nav-con {
 
 	div.span4.myName {
 		text-align: center;
-		margin-top: 21px;
+		margin-top: 10px;
 		h1.code-yellow {
 			font-weight: 100;
 		}
@@ -24,20 +24,31 @@ div.container-fluid.nav-con {
 
 	img.mike{
 		width: 125px;
-		padding-top: 10px;
+		padding: 10px 0;
+
 		margin-left: 15%;
+	}
+	div.span4:last-child{
+		margin-top: 30px;
+	}
+
+	a#nav-linkedin{
+		img{
+			position: relative;
+			top: 44px;
+			width: 40px;
+		}
 	}
 }
 
 
 #links {
-	// float:right;
-	// margin-right:20px;
-	// text-align: center;
+	margin-bottom: 10px;
 	ul{
-			display: inline;
+		display: inline;
+		padding-bottom: 5px;
 		li{
-				display: inline;
+			display: inline;
 			a {
 				color: $code-black;
 				&:hover{
@@ -45,7 +56,6 @@ div.container-fluid.nav-con {
 					color: $code-yellow;
 				}
 				.active {
-					// margin-left: 10px;
 					color: $code-yellow !important;
 				}
 			}
@@ -75,6 +85,15 @@ div.container-fluid.nav-con {
 }
 
 @media screen and (max-width: 767px){
+	div#nav{
+
+		#links{
+			text-align: center;
+		}
+		div.span4:last-child{
+			margin-top: -10px;
+		}		
+	}
 
 }
 

@@ -30,6 +30,10 @@ GEM
       multi_json (~> 1.0)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    better_errors (0.5.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+    binding_of_caller (0.6.8)
     bootstrap-sass-rails (2.3.0.0)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
@@ -157,6 +161,8 @@ PLATFORMS
 
 DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
+  better_errors
+  binding_of_caller
   bootstrap-sass-rails
   bootstrap-will_paginate (= 0.0.6)
   coffee-rails (= 3.2.2)

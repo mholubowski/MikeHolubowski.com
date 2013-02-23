@@ -1,5 +1,5 @@
 	div.slogan{
-		background-color: green;
+		border-left: solid 4px green;
 	}
 
 @media screen and (max-width:1200px) {
@@ -14,7 +14,7 @@
 	// }
 
 	div.slogan{
-		background-color: red;
+		border-left: solid 4px red;
 	}
 }
 
@@ -31,20 +31,20 @@
 	// }
 
 	div.slogan{
-		background-color: orange;
+		border-left: solid 4px orange;
 	}
 }
 
 @media screen and (max-width: 767px){
 		div.slogan{
-		background-color: purple;
+		border-left: solid 4px purple;
 	}
 
 }
 
 @media screen and (max-width: 480px){
 	div.slogan{
-		background-color: yellow;
+		border-left: solid 4px yellow;
 		font-size: 3.0em;
 		font-style: light;
 	}
