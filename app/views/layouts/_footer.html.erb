@@ -1,3 +1,26 @@
 <div class="bottom">
+
+	<div class="row-fluid">
+		<div class="span2 offset1">
+			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'intro'%>
+			<%= link_to 'Intro', intro_path %>
+		</div>
+		<div class="span2">
+			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'projects'%>
+			<%= link_to 'Projects', projects_path %>
+		</div>
+		<div class="span2">
+			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'skills'%>
+			<%= link_to 'Skills', skills_path %>
+		</div>
+		<div class="span2">
+			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'bio'%>
+			<%= link_to 'Bio', bio_path %>
+		</div>
+		<div class="span2">
+			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'contact'%>
+			<%= link_to 'Contact', contact_path %>
+		</div>
+	</div>
 	
 </div>
