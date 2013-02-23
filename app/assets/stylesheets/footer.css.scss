@@ -22,6 +22,15 @@ div.bottom{
 	}
 }
 
+div#mobile-footer{
+
+	.mobile-nav-link{
+		width: 100%;
+		height: 40px;
+		display: block;
+		text-align: center;
+	}
+}
 // *** ----------- Media Queries ---------- *** 
 
 @media screen and (max-width:1200px) {
