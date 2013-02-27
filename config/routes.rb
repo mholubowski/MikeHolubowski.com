@@ -17,6 +17,7 @@ Sandbox::Application.routes.draw do
   match '/projects/ivlaundry'    => 'project#ivlaundry' 
   match '/projects/mikeho'       => 'project#mikeho'
   match '/projects/outfit'       => 'project#outfit'
+  match '/projects/set'          => 'project#set'
 
 
   # The priority is based upon order of creation:

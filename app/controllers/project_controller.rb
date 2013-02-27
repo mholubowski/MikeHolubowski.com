@@ -20,5 +20,8 @@ class ProjectController < ApplicationController
 
 	def mikeho
 	end
+
+	def set
+	end
 	
 end
