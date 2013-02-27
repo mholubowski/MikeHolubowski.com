@@ -1,7 +1,7 @@
 <div id="set-game-container">
 	<div class="row">
 
-		<button type="button" data-toggle="modal" data-target="#highScoreModal">Launch modal</button>
+		<!-- <button type="button" data-toggle="modal" data-target="#highScoreModal">Launch modal</button> -->
 		<!-- Modal -->
 		<div id="highScoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
@@ -42,11 +42,11 @@
 		<div class="span4">
 			<div class="well highscores">
 				<div class="label">High Scores</div>
-				<ul>
+				<ol>
 					<% @players.each do |player| %>
 					<li><span class="name"><%= player.name %></span><span class="score"> <%= player.high_score %></span></li>
 					<% end %>
-				</ul>
+				</ol>
 			</div>
 		</div>
 
@@ -54,24 +54,23 @@
 			<div class="well highscores">
 				<div class="label">Game Rules</div>
 				<ul>
-					<li><span class="name">Mike Holubowski</span><span class="score"> 432</span></li>
-					<li><span class="name">Trent Rosenquist</span><span class="score"> 322</span></li>
-					<li><span class="name">Gabe Buncui</span><span class="score"> 301</span></li>
-					<li><span class="name">Brett Harmel</span><span class="score"> 288</span></li>
-					<li><span class="name">Antonio Alencar</span><span class="score"> 109</span></li>
+					<li><span class="name">Find sets of <strong>3</strong> cards</span></li>
+					<li><span class="name">Cards consist of: <br> <strong>shape</strong> <strong>color</strong> <strong>count</strong> and <strong>pattern</strong> </span></li>
+	<!-- 				<li><span class="name">Rules rules</span></li>
+					<li><span class="name">Rules rules</span></li> -->
+					<li><span class="name"><a href="http://setgame.com/images/tutorial/flash_version/set_flash_tutorial.htm" target="_blank">Flash Tutorial</a></span></li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="span4">
-			<div class="well highscores">
+			<div id="scoring-rules" class="well highscores">
 				<div class="label">Scoring Rules</div>
 				<ul>
-					<li><span class="name">Mike Holubowski</span><span class="score"> 432</span></li>
-					<li><span class="name">Trent Rosenquist</span><span class="score"> 322</span></li>
-					<li><span class="name">Gabe Buncui</span><span class="score"> 301</span></li>
-					<li><span class="name">Brett Harmel</span><span class="score"> 288</span></li>
-					<li><span class="name">Antonio Alencar</span><span class="score"> 109</span></li>
+					<li><span class="green"> +30 </span>Find correct Set</li>
+					<li><span class="red"> -10 </span>Dealing extra cards </li>
+					<li><span class="red"> -5 </span>Choose incorrect set</li>
+					<li><span class="red"> -5 </span>Every 30 seconds of play </li>
 				</ul>
 			</div>
 		</div>

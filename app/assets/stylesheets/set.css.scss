@@ -131,6 +131,21 @@ div#cards-container{
 // End Container
 }
 
+// 3 wells ____________________
+#scoring-rules{
+	span{
+		font-size: 1.2em;
+		&.green{
+			color: green;
+		}
+		&.red{
+			color: red;
+		}
+	}
+}
+
+
+
 // High Score Modal ___________
 #form-high-score{
 	text-align: center;
