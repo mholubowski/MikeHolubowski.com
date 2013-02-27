@@ -56,6 +56,10 @@ function shuffleDeck(cards) {
 
 // append cards to DOM
 function buildCards(amount){
+	subtractCardsLeft(amount);
+	if (parseInt($('#cards-left span').html()) == 0){
+		return;
+	}
 	var container = $('#cards-container');
 	for (var c = 0; c < amount; c++){
 		
@@ -77,7 +81,6 @@ function buildCards(amount){
 
 		current_cards.push(comboID);
 	}
-	subtractCardsLeft(amount);
 	primeForClicking();
 	checkCurrentCards();
 }
@@ -138,6 +141,9 @@ function checkCurrentCards(){
 		}
 	}
 	$('div#spacer span').html(available_posibilities);
+	if (available_posibilities = 0){
+		buildCards(3);
+	}
 }
 
 //check if selected set is in fact a proper set
@@ -246,6 +252,10 @@ function addPoints(points){
 // *** Card Counter
 function subtractCardsLeft(amount){
 	var original = parseInt($('#cards-left span').html());
+	if (original == 0){
+		checkCurrentCards();
+		return;
+	}
 	$('#cards-left span').html(original - amount);
 }
 
