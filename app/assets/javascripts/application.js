@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require turbolinks
+//= require twitter/bootstrap/modal
 //= require_tree .
 
 //----------------- Projects

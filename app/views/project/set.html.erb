@@ -1,4 +1,82 @@
 <div id="set-game-container">
+	<div class="row">
+
+		<button type="button" data-toggle="modal" data-target="#highScoreModal">Launch modal</button>
+		<!-- Modal -->
+		<div id="highScoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">High Score!</h3>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="span3">
+						<p>Your a champ!</p>
+						<%= form_for SetPlayer.new, remote: false do |f| %>
+						<%= f.label :name %>
+						<%= f.text_field 'name', :class => 'submittable' %>
+						<%= f.hidden_field 'high_score', :class => 'submittable' %>
+						
+						<br> 
+						<%= f.submit 'Submit!'%>
+						<% end %>
+
+					</div>
+					
+					<div id="form-high-score" class="span3">
+						<div class="label label-info">Score</div>
+						<div id="score-big">878</div>
+					</div>
+
+				</div>
+			</div>
+		<!-- 	<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				<button class="btn btn-primary">Save changes</button>
+			</div>
+		 -->
+		</div>
+
+
+
+		<div class="span4">
+			<div class="well highscores">
+				<div class="label">High Scores</div>
+				<ul>
+					<% @players.each do |player| %>
+					<li><span class="name"><%= player.name %></span><span class="score"> <%= player.high_score %></span></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+
+		<div class="span4">
+			<div class="well highscores">
+				<div class="label">Game Rules</div>
+				<ul>
+					<li><span class="name">Mike Holubowski</span><span class="score"> 432</span></li>
+					<li><span class="name">Trent Rosenquist</span><span class="score"> 322</span></li>
+					<li><span class="name">Gabe Buncui</span><span class="score"> 301</span></li>
+					<li><span class="name">Brett Harmel</span><span class="score"> 288</span></li>
+					<li><span class="name">Antonio Alencar</span><span class="score"> 109</span></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="span4">
+			<div class="well highscores">
+				<div class="label">Scoring Rules</div>
+				<ul>
+					<li><span class="name">Mike Holubowski</span><span class="score"> 432</span></li>
+					<li><span class="name">Trent Rosenquist</span><span class="score"> 322</span></li>
+					<li><span class="name">Gabe Buncui</span><span class="score"> 301</span></li>
+					<li><span class="name">Brett Harmel</span><span class="score"> 288</span></li>
+					<li><span class="name">Antonio Alencar</span><span class="score"> 109</span></li>
+				</ul>
+			</div>
+		</div>
+
+	</div>
 	<div id="score">
 		<span id="label">Score:</span>
 		<span id="count">100</span>
@@ -9,7 +87,7 @@
 	<div id="spacer">
 		Possible Sets:
 		<br>
-		 <span>~</span>
+		<span>~</span>
 	</div>
 
 	<div id="cards-left"> <span>81</span> cards left</div>

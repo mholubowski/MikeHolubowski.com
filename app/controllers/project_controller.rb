@@ -22,6 +22,9 @@ class ProjectController < ApplicationController
 	end
 
 	def set
+		@players = SetPlayer.all(
+			order: 'high_score DESC',
+			limit: 5)
 	end
 	
 end

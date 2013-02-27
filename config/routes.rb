@@ -1,5 +1,9 @@
 Sandbox::Application.routes.draw do
 
+  get "set_player/new"
+
+  get "set_player/create"
+
   root to: 'home#intro'
   get "greetings/hello"
 
@@ -19,7 +23,7 @@ Sandbox::Application.routes.draw do
   match '/projects/outfit'       => 'project#outfit'
   match '/projects/set'          => 'project#set'
 
-
+  resources :set_players
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

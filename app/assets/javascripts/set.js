@@ -8,6 +8,7 @@
 // 	-load all correct combo's into array and check again them to optimize checkSet()
 // 	-End game
 // 	-High Scores
+//  - Get off jquery.UI!
 // ----------------
 // Styling
 // 
@@ -257,6 +258,25 @@ window.setInterval(function(){
 		subtractPoints(5);
 	}
 }, 1000);
+
+
+//  *** End Game ---------
+
+function checkIfEndGame(){
+	var cardsLeft    =  $('#cards-left span').html();
+	var possibleSets =  $('div#spacer span').html();
+
+	if (cardsLeft == 0 && possibleSets == 0){
+		endGame();
+	}
+}
+
+function endGame(){
+	var score = $('span#count').html();
+	$('input#set_player_high_score').val(score)
+	$('div#score-big').html(score);
+	$('#highScoreModal').modal();
+}
 
 
 
