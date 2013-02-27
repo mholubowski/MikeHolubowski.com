@@ -1,3 +1,19 @@
+// Set.js by MikeHolubowski.com
+// *** ---- TODO ---- ***
+//
+// 
+// ----------------
+// Features
+// 	-cards selected flash red or green to indicate in/correct choice
+// 	-load all correct combo's into array and check again them to optimize checkSet()
+// 	-End game
+// 	-High Scores
+// ----------------
+// Styling
+// 
+
+
+
 // builds 81 unique cards by iterating over the properties
 var current_cards = [];
 var cards = [],
@@ -66,25 +82,28 @@ function buildCards(amount){
 }
 
 // create 3 cards on click
-$('div#add').on('click', function(){
-	if ($('div#spacer span').html() != 0){
-		subtractPoints(10);
-	}
-	buildCards(3)
-});
 
 // create, shuffle, and build 12 cards to start
 $(document).ready(function(){
 	createDeck();
 	shuffleDeck(cards);
 	buildCards(12);
+	$('#add').on('click', function(){
+		console.log('click');
+		if ($('div#spacer span').html() != 0){
+			// TODO lose points proportional to how many available sets there are
+			subtractPoints(10);
+		}
+		buildCards(3);
+	});
 })
 
 //reset all clicked cards
 function primeForClicking(){
+	$('.unclicked').unbind('click');
 	$('.unclicked').on('click', function(){
 	// check if this card has already been added to ondeck
-	if ($.inArray($(this).attr('id'), ondeck) === -1){
+		if ($.inArray($(this).attr('id'), ondeck) === -1){
 			//add css class and add the cards id to onDeck
 			$(this).removeClass('unclicked').addClass('clicked');
 			console.log('class added');
@@ -189,6 +208,7 @@ function checkSet(set, is_active){
 			current_cards.splice(current_cards.indexOf(set[i]), 1);
 		}
 		ondeck = [];
+		unclickAll();
 		buildCards(3);
 		addPoints(30);
 
