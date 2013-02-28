@@ -56,10 +56,10 @@ function shuffleDeck(cards) {
 
 // append cards to DOM
 function buildCards(amount){
-	subtractCardsLeft(amount);
 	if (parseInt($('#cards-left span').html()) == 0){
 		return;
 	}
+	subtractCardsLeft(amount);
 	var container = $('#cards-container');
 	for (var c = 0; c < amount; c++){
 		
@@ -216,7 +216,11 @@ function checkSet(set, is_active){
 		}
 		ondeck = [];
 		unclickAll();
-		buildCards(3);
+		// check if there are more than 12 cards
+		console.log($('.card').length);
+		if ($('.card').length < 12){
+			buildCards(3);
+		}
 		addPoints(30);
 		checkIfEndGame();
 	}
