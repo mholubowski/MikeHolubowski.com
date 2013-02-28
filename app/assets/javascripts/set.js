@@ -88,7 +88,7 @@ function buildCards(amount){
 // create 3 cards on click
 
 // create, shuffle, and build 12 cards to start
-$(document).ready(function(){
+function doOnLoad() { 
 	createDeck();
 	shuffleDeck(cards);
 	buildCards(12);
@@ -100,6 +100,13 @@ $(document).ready(function(){
 		}
 		buildCards(3);
 	});
+}
+
+$(window).bind('page:change', function(){
+	doOnLoad();
+})
+$(document).ready(function(){
+	doOnLoad();
 })
 
 //reset all clicked cards
