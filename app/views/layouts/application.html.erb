@@ -16,7 +16,9 @@
 	<div id="mainArea" class="container-fluid">
 		<%= yield %>
 	</div>
-</body>
 
 	<%= render 'layouts/footer' %>
+	<%= render 'layout/google_analytics' if Rails.env.production? %>
+</body>
+
 </html>
