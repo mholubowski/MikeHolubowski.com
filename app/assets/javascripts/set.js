@@ -218,7 +218,7 @@ function checkSet(set, is_active){
 		unclickAll();
 		buildCards(3);
 		addPoints(30);
-
+		checkIfEndGame();
 	}
 
 	function isNotMatch(){
@@ -275,18 +275,22 @@ window.setInterval(function(){
 function checkIfEndGame(){
 	var cardsLeft    =  $('#cards-left span').html();
 	var possibleSets =  $('div#spacer span').html();
-
+	console.log('cards left: ' + cardsLeft);
+	console.log('possible sets: ' + possibleSets);
 	if (cardsLeft == 0 && possibleSets == 0){
 		endGame();
 	}
+	else {
+		console.log('game not over');
+	}
+	function endGame(){
+		var score = $('span#count').html();
+		$('input#set_player_high_score').val(score)
+		$('div#score-big').html(score);
+		$('#highScoreModal').modal();
+	}
 }
 
-function endGame(){
-	var score = $('span#count').html();
-	$('input#set_player_high_score').val(score)
-	$('div#score-big').html(score);
-	$('#highScoreModal').modal();
-}
 
 
 
