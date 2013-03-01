@@ -100,11 +100,14 @@ function doOnLoad() {
 		}
 		buildCards(3);
 	});
+	if ($('div#spacer span').html == 0){
+		buildCards(3);
+	}
 }
 
-$(window).bind('page:change', function(){
-	doOnLoad();
-})
+// $(window).bind('page:change', function(){
+// 	doOnLoad();
+// })
 $(document).ready(function(){
 	doOnLoad();
 })
@@ -218,7 +221,7 @@ function checkSet(set, is_active){
 
 		for (var i = 0; i < set.length; i++){
 			var id = '#'+ set[i];
-			$(id).hide(1000);
+			$(id).remove();
 			current_cards.splice(current_cards.indexOf(set[i]), 1);
 		}
 		ondeck = [];
