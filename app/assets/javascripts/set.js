@@ -13,8 +13,6 @@
 // Styling
 // 
 
-
-
 // builds 81 unique cards by iterating over the properties
 var current_cards = [];
 var cards = [],
@@ -304,9 +302,4 @@ function checkIfEndGame(){
 		$('#highScoreModal').modal();
 	}
 }
-
-
-
-
-
 
