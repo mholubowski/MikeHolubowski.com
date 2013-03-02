@@ -31,6 +31,12 @@ function Card (id, count, color, shape, fill) {
 	this.remove = function(){
 		$(selector).remove();
 	}
+	this.clickAdd = function(){
+		$(selector).addClass('clicked').removeClass('unclicked');
+	}
+	this.clickRemove = function(){
+		$(selector).addClass('unclicked').removeClass('clicked');
+	}
 	this.flash = function(color, duration){
 		$(selector).stop().css('background-color', color).animate({
 			backgroundColor: "#fff"}, duration
@@ -114,13 +120,16 @@ var selection = {
 	cards: [],
 	add: function(card){
 		var id = card.id.substr(1);
+		protoCards[id].clickAdd();
 		this.cards.push(protoCards[id]);
-		console.log(this.cards);
+		if (this.cards.length == 3){
+			this.check();
+		}
 	},
 	check: function(){
-		var one   = this.selectionCards[0].combo.split('');
-		var two   = this.selectionCards[1].combo.split('');
-		var three = this.selectionCards[2].combo.split('');
+		var one   = this.cards[0].combo.split('');
+		var two   = this.cards[1].combo.split('');
+		var three = this.cards[2].combo.split('');
 		// create matrix m
 		var m = [];
 		m[0] = [one[0],two[0],three[0]];
@@ -141,14 +150,45 @@ var selection = {
 			}
 		}
 		if (t[0] && t[1] && t[2] && t[3]){
-			alert('match');
+			this.match();
+		}
+		else {
+			this.noMatch();
 		}
 	},
+	noMatch: function(){
+		points.subtract(5);
+		for (var i = 0; i < this.cards.length; i++){
+			this.cards[i].flash('red', 300);
+		}
+		this.clear();
+	},
+	match: function(){
+		alert('match');
+	},
 	clear: function(){
-		this.selectionCards = []
+		for (var i = 0; i < this.cards.length; i++){
+			this.cards[i].clickRemove();
+		}
+		this.cards = []
 	}
 }
 
+// --------------------------------------------------------- Points
+var points = {
+	total: 100,
+	add: function(amount){
+		this.total += amount;
+		this.print();
+	},
+	subtract: function(amount){
+		this.total -= amount;
+		this.print();
+	},
+	print: function(){
+		$('span#count').html(this.total);
+	}
+}
 
 
 
