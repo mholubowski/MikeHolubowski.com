@@ -1,3 +1,8 @@
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+
 var container = $('#cards-container');
 
 var count = [1, 2, 3],
@@ -37,6 +42,33 @@ function Card (id, count, color, shape, fill) {
 }
 
 // --------------------------------------------------------- Deck Object
+var protoCards = [];
+var buildProtoCards = function(){
+	var cnt, 
+	clr, 
+	fl, 
+	s;
+	id = 0;
+	for (cnt = 0; cnt < count.length; cnt += 1) {
+		for (clr = 0; clr < color.length; clr += 1) {
+			for (fl = 0; fl < fill.length; fl += 1) {
+				for (s = 0; s < shape.length; s += 1) {
+					protoCards.push(
+						new Card(
+							id,
+							count[cnt],
+							color[clr],
+							shape[s],
+							fill[fl]
+							)
+						)
+					id++;
+				}
+			}
+		}
+	}
+}
+buildProtoCards();
 var deck = {
 	cards: [],
 	build: function(){
@@ -44,52 +76,50 @@ var deck = {
 		clr, 
 		fl, 
 		s;
+		id = 0;
 		for (cnt = 0; cnt < count.length; cnt += 1) {
 			for (clr = 0; clr < color.length; clr += 1) {
 				for (fl = 0; fl < fill.length; fl += 1) {
 					for (s = 0; s < shape.length; s += 1) {
 						this.cards.push(
 							new Card(
-								2,
+								id,
 								count[cnt],
 								color[clr],
 								shape[s],
 								fill[fl]
 								)
 							)
+						id++;
 					}
 				}
 			}
 		}
-	},
-	shuffled: [],
-	shuffle: function(){
-		for (var i = 80; i > 0; i--) {
-			var j = Math.floor(Math.random() * (i + 1));
-			var temp = this.cards[i];
-			this.shuffled[i] = this.cards[j];
-			this.shuffled[j] = temp;
-		}
-		console.log('done shuffling');
-	},
+	shuffle(this.cards)
+  },
 	amountLeft: 81,
 	removeFromDeck: function(amount){
 		this.amountLeft -= amount;
 	},
 	deal: function(amount){
 		for (var i = 0; i < amount; i++){
-			$('#cards-container').append(this.shuffled[i].html);
-			this.shuffled.shift();
+			$('#cards-container').append(this.cards[0].html);
+			this.cards.shift();
 		}
 	}
 }
 
 // --------------------------------------------------------- Selection Object
 var selection = {
-	selectionCards: [],
+	cards: [],
+	add: function(card){
+		var id = card.id.substr(1);
+		this.cards.push(protoCards[id]);
+		console.log(this.cards);
+	},
 	check: function(){
-		var one = this.selectionCards[0].combo.split('');
-		var two = this.selectionCards[1].combo.split('');
+		var one   = this.selectionCards[0].combo.split('');
+		var two   = this.selectionCards[1].combo.split('');
 		var three = this.selectionCards[2].combo.split('');
 		// create matrix m
 		var m = [];
@@ -124,7 +154,11 @@ var selection = {
 
 // --------------------------------------------------------- Doc Ready
 $(document).ready(function(){
+	// deck.build();
 	deck.build();
-	deck.shuffle();
 	deck.deal(12);
+
+	$('.unclicked').click(function(){
+		selection.add(this);
+	})
 })
