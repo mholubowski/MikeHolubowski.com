@@ -75,6 +75,7 @@ var buildProtoCards = function(){
 	}
 }
 buildProtoCards();
+
 var deck = {
 	cards: [],
 	build: function(){
@@ -106,12 +107,19 @@ var deck = {
 	amountLeft: 81,
 	removeFromDeck: function(amount){
 		this.amountLeft -= amount;
+		$('#cards-left span').html(this.amountLeft);
 	},
 	deal: function(amount){
 		for (var i = 0; i < amount; i++){
 			$('#cards-container').append(this.cards[0].html);
 			this.cards.shift();
 		}
+		this.removeFromDeck(amount);
+		// make all clickable
+		$('.unclicked').unbind('click');
+		$('.unclicked').click(function(){
+			selection.add(this);
+		})
 	}
 }
 
@@ -119,11 +127,14 @@ var deck = {
 var selection = {
 	cards: [],
 	add: function(card){
+		// only if this card hasn't been clicked already
 		var id = card.id.substr(1);
-		protoCards[id].clickAdd();
-		this.cards.push(protoCards[id]);
-		if (this.cards.length == 3){
-			this.check();
+		if ($.inArray(protoCards[id], this.cards) === -1){
+			protoCards[id].clickAdd();
+			this.cards.push(protoCards[id]);
+			if (this.cards.length == 3){
+				this.check();
+			}
 		}
 	},
 	check: function(){
@@ -164,7 +175,17 @@ var selection = {
 		this.clear();
 	},
 	match: function(){
-		alert('match');
+		points.add(30);
+		for (var i = 0; i < this.cards.length; i++){
+			this.cards[i].flash('green', 300);
+		}
+		setTimeout(function(){
+			for (var i = 0; i < selection.cards.length; i++){
+				selection.cards[i].remove();
+			}
+			selection.clear();
+			return deck.deal(3);
+		}, 300)
 	},
 	clear: function(){
 		for (var i = 0; i < this.cards.length; i++){
@@ -190,15 +211,13 @@ var points = {
 	}
 }
 
-
-
 // --------------------------------------------------------- Doc Ready
 $(document).ready(function(){
 	// deck.build();
 	deck.build();
 	deck.deal(12);
 
-	$('.unclicked').click(function(){
-		selection.add(this);
+	$('#add').click(function(){
+		deck.deal(3);
 	})
 })
