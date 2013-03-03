@@ -124,6 +124,9 @@ var deck = {
 			selection.add(this);
 		})
 		this.possible(true);
+		if (this.possible() == 0){
+			deck.deal(3);
+		}
 	},
 	available_posibilities: 0,
 	current_cards: [],
@@ -167,6 +170,7 @@ var deck = {
 		if (print == true){
 			$('div#possibilities span').html(this.available_possibilities);
 		}
+		return(possibilities);
 	}
 
 }
@@ -225,14 +229,22 @@ var selection = {
 	match: function(){
 		points.add(30);
 		for (var i = 0; i < this.cards.length; i++){
-			this.cards[i].flash('green', 300);
+			this.cards[i].flash('#15E637', 300);
 		}
 		setTimeout(function(){
 			for (var i = 0; i < selection.cards.length; i++){
 				selection.cards[i].remove();
 			}
 			selection.clear();
-			return deck.deal(3);
+			console.log('current: ' + deck.current_cards.length);
+			if (deck.current_cards.length < 12){
+				return deck.deal(3);
+			}
+			else {
+				if (this.possible() == 0){
+					deck.deal(3);
+			  }
+			}
 		}, 300)
 	},
 	clear: function(){
@@ -241,7 +253,6 @@ var selection = {
 		}
 		this.cards = []
 	}
-
 }
 
 // --------------------------------------------------------- Points
@@ -250,15 +261,45 @@ var points = {
 	add: function(amount){
 		this.total += amount;
 		this.print();
+		$('div#score').stop().css('background-color', '#15E637').animate({
+			backgroundColor: "#bbb"}, 300);
 	},
 	subtract: function(amount){
 		this.total -= amount;
 		this.print();
+		$('div#score').stop().css('background-color', 'red').animate({
+			backgroundColor: "#bbb"}, 300);
 	},
 	print: function(){
 		$('span#count').html(this.total);
 	}
 }
+// --------------------------------------------------------- endGame
+
+var game = {
+	check: function(){
+		if (deck.cards.length == 0 && deck.possible() == 0){
+			// END GAME
+			alert('game over!');
+			$('input#set_player_high_score').val(points.total)
+			$('div#score-big').html(points.total);
+			$('#highScoreModal').modal();
+		}
+		else{
+			console.log('game not over');
+		}
+	}
+}
+
+// --------------------------------------------------------- Timer
+window.setInterval(function(){
+	var original = parseInt($('#timer span').html());
+	$('#timer span').html(original + 1);
+
+	if ((original + 1) % 30 === 0){
+		points.subtract(5);
+	}
+}, 1000);
 
 // --------------------------------------------------------- Doc Ready
 $(document).ready(function(){
@@ -268,5 +309,6 @@ $(document).ready(function(){
 
 	$('#add').click(function(){
 		deck.deal(3);
+		points.subtract(10);
 	})
 })
