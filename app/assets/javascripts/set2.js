@@ -1,7 +1,6 @@
 // ****** Open bugs / issues / to do's
 // - cards not removing from deck.current_cards properly
 // - jquery.ui dependency
-//
 
 function shuffle(o){ //v1.0
 	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
