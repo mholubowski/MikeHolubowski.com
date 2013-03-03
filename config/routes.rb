@@ -1,4 +1,4 @@
-Mikeholubowski.com::Application.routes.draw do
+Mikeholubowski::Application.routes.draw do
 
   get "set_player/new"
 

@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mikeholubowski.com::Application.load_tasks
+Mikeholubowski::Application.load_tasks

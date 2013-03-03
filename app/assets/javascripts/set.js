@@ -1,4 +1,4 @@
-// // Set.js by MikeHolubowski.com
+// // Set.js by Mikeholubowski
 // // *** ---- TODO ---- ***
 // //
 // // 
