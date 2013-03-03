@@ -1,4 +1,4 @@
-Sandbox::Application.routes.draw do
+Mikeholubowski.com::Application.routes.draw do
 
   get "set_player/new"
 
