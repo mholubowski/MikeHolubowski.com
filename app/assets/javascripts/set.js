@@ -92,13 +92,13 @@
 // 	buildCards(12);
 // 	$('#add').on('click', function(){
 // 		console.log('click');
-// 		if ($('div#spacer span').html() != 0){
+// 		if ($('div#possibilities span').html() != 0){
 // 			// TODO lose points proportional to how many available sets there are
 // 			subtractPoints(10);
 // 		}
 // 		buildCards(3);
 // 	});
-// 	if ($('div#spacer span').html == 0){
+// 	if ($('div#possibilities span').html == 0){
 // 		buildCards(3);
 // 	}
 // }
@@ -148,7 +148,7 @@
 // 			}
 // 		}
 // 	}
-// 	$('div#spacer span').html(available_posibilities);
+// 	$('div#possibilities span').html(available_posibilities);
 // 	if (available_posibilities = 0){
 // 		buildCards(3);
 // 	}
@@ -286,7 +286,7 @@
 
 // function checkIfEndGame(){
 // 	var cardsLeft    =  $('#cards-left span').html();
-// 	var possibleSets =  $('div#spacer span').html();
+// 	var possibleSets =  $('div#possibilities span').html();
 // 	console.log('cards left: ' + cardsLeft);
 // 	console.log('possible sets: ' + possibleSets);
 // 	if (cardsLeft == 0 && possibleSets == 0){

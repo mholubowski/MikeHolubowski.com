@@ -30,6 +30,8 @@ function Card (id, count, color, shape, fill) {
 	var selector = "#c" + id;
 	this.remove = function(){
 		$(selector).remove();
+		deck.current_cards.splice(deck.current_cards.indexOf(this), 1)
+		deck.possible(true);
 	}
 	this.clickAdd = function(){
 		$(selector).addClass('clicked').removeClass('unclicked');
@@ -112,6 +114,7 @@ var deck = {
 	deal: function(amount){
 		for (var i = 0; i < amount; i++){
 			$('#cards-container').append(this.cards[0].html);
+			this.current_cards.push(this.cards[0]);
 			this.cards.shift();
 		}
 		this.removeFromDeck(amount);
@@ -120,7 +123,52 @@ var deck = {
 		$('.unclicked').click(function(){
 			selection.add(this);
 		})
+		this.possible(true);
+	},
+	available_posibilities: 0,
+	current_cards: [],
+	possible: function(print){
+		var possibilities = 0;
+		for (var i = 0; i < this.current_cards.length - 2; i++){
+			for (var j = i+1; j < this.current_cards.length - 1; j++){
+				for (var k = j+1; k < this.current_cards.length;    k++){
+
+					var one   = this.current_cards[i].combo.split('');
+					var two   = this.current_cards[j].combo.split('');
+					var three = this.current_cards[k].combo.split('');
+					// create matrix m
+					var m = [];
+					m[0] = [one[0],two[0],three[0]];
+					m[1] = [one[1],two[1],three[1]];
+					m[2] = [one[2],two[2],three[2]];
+					m[3] = [one[3],two[3],three[3]];
+					// t holds true's or false's for each condition
+					var t = [];
+					for (var n = 0; n <= 3; n++){
+						if (m[n][0] === m[n][1] && m[n][1] === m[n][2]){
+							t.push(true);
+						}
+						else if (m[n][0] !== m[n][1] && m[n][0] !== m[n][2] && m[n][1] !== m[n][2]) {
+							t.push(true);
+						}	
+						else{
+							t.push(false);
+						}
+					}
+					if (t[0] && t[1] && t[2] && t[3]){
+						possibilities ++;
+					}
+					else {
+					}
+				}
+			}
+		}
+		this.available_possibilities = possibilities;
+		if (print == true){
+			$('div#possibilities span').html(this.available_possibilities);
+		}
 	}
+
 }
 
 // --------------------------------------------------------- Selection Object
@@ -193,6 +241,7 @@ var selection = {
 		}
 		this.cards = []
 	}
+
 }
 
 // --------------------------------------------------------- Points
