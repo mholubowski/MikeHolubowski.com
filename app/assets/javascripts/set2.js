@@ -1,6 +1,10 @@
+// ****** Open bugs / issues / to do's
+// - cards not removing from deck.current_cards properly
+// - jquery.ui dependency
+
 function shuffle(o){ //v1.0
-    for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
-    return o;
+	for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+		return o;
 };
 
 var container = $('#cards-container');
@@ -30,7 +34,10 @@ function Card (id, count, color, shape, fill) {
 	var selector = "#c" + id;
 	this.remove = function(){
 		$(selector).remove();
-		deck.current_cards.splice(deck.current_cards.indexOf(this), 1)
+		deck.current_cards.splice(deck.current_cards.indexOf(this), 1);
+		debugger;
+		console.log(this.id + ' removed');
+		console.log('deck.current_cards.length: ' + deck.current_cards.length);
 		deck.possible(true);
 	}
 	this.clickAdd = function(){
@@ -78,6 +85,7 @@ var buildProtoCards = function(){
 }
 buildProtoCards();
 
+// ---------------------------------------------- deck
 var deck = {
 	cards: [],
 	build: function(){
@@ -104,8 +112,8 @@ var deck = {
 				}
 			}
 		}
-	shuffle(this.cards)
-  },
+		shuffle(this.cards)
+	},
 	amountLeft: 81,
 	removeFromDeck: function(amount){
 		this.amountLeft -= amount;
@@ -113,8 +121,13 @@ var deck = {
 	},
 	deal: function(amount){
 		for (var i = 0; i < amount; i++){
+			if (this.cards.length == 0){
+				game.check();
+				return 'no cards to deal...checking if end game';
+			}
 			$('#cards-container').append(this.cards[0].html);
 			this.current_cards.push(this.cards[0]);
+			console.log('added to current_cards: ' + this.cards[0].id);
 			this.cards.shift();
 		}
 		this.removeFromDeck(amount);
@@ -236,14 +249,14 @@ var selection = {
 				selection.cards[i].remove();
 			}
 			selection.clear();
-			console.log('current: ' + deck.current_cards.length);
 			if (deck.current_cards.length < 12){
 				return deck.deal(3);
 			}
 			else {
 				if (this.possible() == 0){
 					deck.deal(3);
-			  }
+					alert('Zero possibilities, I dealt more cards for you')
+				}
 			}
 		}, 300)
 	},
@@ -300,6 +313,58 @@ window.setInterval(function(){
 		points.subtract(5);
 	}
 }, 1000);
+
+// --------------------------------------------------------- Debug
+
+var debug = {
+	select: window.selection,
+	solveOne: function(){
+		var possibilities = 0;
+		for (var i = 0; i < deck.current_cards.length - 2; i++){
+			for (var j = i+1; j < deck.current_cards.length - 1; j++){
+				for (var k = j+1; k < deck.current_cards.length;    k++){
+
+					var one   = deck.current_cards[i].combo.split('');
+					var two   = deck.current_cards[j].combo.split('');
+					var three = deck.current_cards[k].combo.split('');
+					// create matrix m
+					var m = [];
+					m[0] = [one[0],two[0],three[0]];
+					m[1] = [one[1],two[1],three[1]];
+					m[2] = [one[2],two[2],three[2]];
+					m[3] = [one[3],two[3],three[3]];
+					// t holds true's or false's for each condition
+					var t = [];
+					for (var n = 0; n <= 3; n++){
+						if (m[n][0] === m[n][1] && m[n][1] === m[n][2]){
+							t.push(true);
+						}
+						else if (m[n][0] !== m[n][1] && m[n][0] !== m[n][2] && m[n][1] !== m[n][2]) {
+							t.push(true);
+						}	
+						else{
+							t.push(false);
+						}
+					}
+					if (t[0] && t[1] && t[2] && t[3]){
+						console.log(deck.current_cards[i].id + deck.current_cards[j].id + deck.current_cards[k].id);
+						var seli = '#' + deck.current_cards[i].id;
+						$(seli).click();
+						setTimeout(function(){
+							var selj = '#' + deck.current_cards[j].id;
+							$(selj).click();
+							setTimeout(function(){
+								var selk = '#' + deck.current_cards[k].id;
+								$(selk).click();
+							}, 750)
+						}, 750)
+						return;
+					}
+				}
+			}
+		}
+	}
+}
 
 // --------------------------------------------------------- Doc Ready
 $(document).ready(function(){
