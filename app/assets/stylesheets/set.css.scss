@@ -150,6 +150,17 @@ div#add{
 
 
 // 3 wells ------------------
+
+div#highscores-well{
+	li{
+		border-bottom: 1px dotted #ccc;
+	}
+	span.date{
+		text-align: right;
+		float: right;
+	}
+}
+
 #scoring-rules{
 	span{
 		font-size: 1.2em;

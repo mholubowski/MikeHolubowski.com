@@ -45,12 +45,20 @@
 
 
 
-		<div class="span4">
+		<div id="highscores-well" class="span4">
 			<div class="well highscores">
 				<div class="label">High Scores</div>
 				<ol>
 					<% @players.each do |player| %>
-					<li><span class="name"><%= player.name %></span><span class="score"> <%= player.high_score %></span></li>
+					<li>
+						<span class="name"><%= player.name %></span>
+						<span class="score"> <%= player.high_score %></span>
+
+						<span class="date">
+							<%= time_ago_in_words(player.created_at.strftime("%d %b. %Y")) + ' ago' %>
+						</span>
+
+					</li>
 					<% end %>
 				</ol>
 			</div>
@@ -90,7 +98,7 @@
 		<div id="score">
 			<span id="label">Score:</span>
 			<span id="count">100</span>
-			
+
 		</div>
 
 		<div id="timer"> <span>0</span> seconds</div>
