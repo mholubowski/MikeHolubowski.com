@@ -35,7 +35,6 @@ function Card (id, count, color, shape, fill) {
 	this.remove = function(){
 		$(selector).remove();
 		deck.current_cards.splice(deck.current_cards.indexOf(this), 1);
-		debugger;
 		console.log(this.id + ' removed');
 		console.log('deck.current_cards.length: ' + deck.current_cards.length);
 		deck.possible(true);
