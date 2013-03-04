@@ -10,7 +10,7 @@ div#cards-container{
 	background-color: #dfdfdf;
 	padding: 30px;
 	border: 6px solid $border-color;
-	box-shadow: inset 2px 2px 4px 2px #333;
+	box-shadow: inset 2px 2px 4px 2px #666;
 	div.card{
 		text-align: center;
 		display: inline-block;
@@ -158,6 +158,9 @@ div#highscores-well{
 	span.date{
 		text-align: right;
 		float: right;
+	}
+	span.score{
+		font-weight: bold;
 	}
 }
 
