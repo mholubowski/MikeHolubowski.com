@@ -17,7 +17,7 @@ var count = [1, 2, 3],
 		// empty full striped
 		fill  = ['e', 'f', 's'];
 
-// --------------------------------------------------------- Card Object
+// ---------------------------------------------------------------- Card Object
 function Card (id, count, color, shape, fill) {
 	this.id    = 'c' + id;
 	this.count = count;  
@@ -35,8 +35,6 @@ function Card (id, count, color, shape, fill) {
 	this.remove = function(){
 		$(selector).remove();
 		deck.current_cards.splice(deck.current_cards.indexOf(this), 1);
-		console.log(this.id + ' removed');
-		console.log('deck.current_cards.length: ' + deck.current_cards.length);
 		deck.possible(true);
 	}
 	this.clickAdd = function(){
@@ -55,7 +53,7 @@ function Card (id, count, color, shape, fill) {
 	}
 }
 
-// --------------------------------------------------------- Deck Object
+// ----------------------------------------------------------------- protoCards
 var protoCards = [];
 var buildProtoCards = function(){
 	var cnt, 
@@ -84,33 +82,13 @@ var buildProtoCards = function(){
 }
 buildProtoCards();
 
-// ---------------------------------------------- deck
+// ----------------------------------------------------------------------- Deck
 var deck = {
 	cards: [],
 	build: function(){
-		var cnt, 
-		clr, 
-		fl, 
-		s;
-		id = 0;
-		for (cnt = 0; cnt < count.length; cnt += 1) {
-			for (clr = 0; clr < color.length; clr += 1) {
-				for (fl = 0; fl < fill.length; fl += 1) {
-					for (s = 0; s < shape.length; s += 1) {
-						this.cards.push(
-							new Card(
-								id,
-								count[cnt],
-								color[clr],
-								shape[s],
-								fill[fl]
-								)
-							)
-						id++;
-					}
-				}
-			}
-		}
+		$.each(protoCards, function(index,value){
+			deck.cards.push(value);
+		})
 		shuffle(this.cards)
 	},
 	amountLeft: 81,
@@ -126,7 +104,6 @@ var deck = {
 			}
 			$('#cards-container').append(this.cards[0].html);
 			this.current_cards.push(this.cards[0]);
-			console.log('added to current_cards: ' + this.cards[0].id);
 			this.cards.shift();
 		}
 		this.removeFromDeck(amount);
@@ -187,7 +164,7 @@ var deck = {
 
 }
 
-// --------------------------------------------------------- Selection Object
+// ----------------------------------------------------------- Selection Object
 var selection = {
 	cards: [],
 	add: function(card){
@@ -267,7 +244,7 @@ var selection = {
 	}
 }
 
-// --------------------------------------------------------- Points
+// --------------------------------------------------------------------- Points
 var points = {
 	total: 100,
 	add: function(amount){
@@ -286,13 +263,12 @@ var points = {
 		$('span#count').html(this.total);
 	}
 }
-// --------------------------------------------------------- endGame
+// -------------------------------------------------------------------- endGame
 
 var game = {
 	check: function(){
 		if (deck.cards.length == 0 && deck.possible() == 0){
 			// END GAME
-			alert('game over!');
 			$('input#set_player_high_score').val(points.total)
 			$('div#score-big').html(points.total);
 			$('#highScoreModal').modal();
@@ -303,7 +279,7 @@ var game = {
 	}
 }
 
-// --------------------------------------------------------- Timer
+// ---------------------------------------------------------------------- Timer
 window.setInterval(function(){
 	var original = parseInt($('#timer span').html());
 	$('#timer span').html(original + 1);
@@ -313,11 +289,15 @@ window.setInterval(function(){
 	}
 }, 1000);
 
-// --------------------------------------------------------- Debug
+// ---------------------------------------------------------------------- Debug
 
 var debug = {
 	select: window.selection,
-	solveOne: function(){
+	solveOne: function(time){
+		if (time == undefined){
+			time = 750;
+		}
+		points.subtract(60);
 		var possibilities = 0;
 		for (var i = 0; i < deck.current_cards.length - 2; i++){
 			for (var j = i+1; j < deck.current_cards.length - 1; j++){
@@ -346,7 +326,6 @@ var debug = {
 						}
 					}
 					if (t[0] && t[1] && t[2] && t[3]){
-						console.log(deck.current_cards[i].id + deck.current_cards[j].id + deck.current_cards[k].id);
 						var seli = '#' + deck.current_cards[i].id;
 						$(seli).click();
 						setTimeout(function(){
@@ -355,8 +334,8 @@ var debug = {
 							setTimeout(function(){
 								var selk = '#' + deck.current_cards[k].id;
 								$(selk).click();
-							}, 750)
-						}, 750)
+							}, time)
+						}, time)
 						return;
 					}
 				}
@@ -365,7 +344,7 @@ var debug = {
 	}
 }
 
-// --------------------------------------------------------- Doc Ready
+// ------------------------------------------------------------------ Doc Ready
 $(document).ready(function(){
 	// deck.build();
 	deck.build();

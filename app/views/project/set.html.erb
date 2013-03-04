@@ -11,7 +11,7 @@
 			<div class="modal-body">
 				<div class="row">
 					<div class="span3">
-						<p>Your a champ!</p>
+						<p>You're a champ!</p>
 						<%= form_for SetPlayer.new, remote: false do |f| %>
 						<%= f.label :name %>
 						<%= f.text_field 'name', :class => 'submittable' %>
@@ -23,11 +23,17 @@
 
 					</div>
 					
-					<div id="form-high-score" class="span3">
+					<div id="form-high-score" class="span2">
 						<div class="label label-info">Score</div>
 						<div id="score-big">878</div>
 					</div>
 
+				</div>
+
+				<div id="modal-bottom" class="row">
+					Thanks for playing!
+					<br>
+					<span>-Mike</span>
 				</div>
 			</div>
 		<!-- 	<div class="modal-footer">
@@ -77,25 +83,33 @@
 
 	</div>
 	
-	<div id="score">
-		<span id="label">Score:</span>
-		<span id="count">100</span>
+	<!-- ********************************************************* GAME -->
+
+	<div id="top-row">
+		
+		<div id="score">
+			<span id="label">Score:</span>
+			<span id="count">100</span>
+			
+		</div>
+
+		<div id="timer"> <span>0</span> seconds</div>
+
+		<div id="possibilities">
+			Possible Sets:
+			<br>
+			<span>~</span>
+		</div>
+
+		<div id="cards-left"> <span>81</span> cards left</div>
+		
+		<div id="add"> Deal 3 Cards </div>
+
 	</div>
-
-	<div id="timer"> <span>0</span> seconds</div>
-
-	<div id="possibilities">
-		Possible Sets:
-		<br>
-		<span>~</span>
-	</div>
-
-	<div id="cards-left"> <span>81</span> cards left</div>
-	
-	<div id="add"> Deal 3 Cards </div>
 
 
 	<div id="cards-container">
 
 	</div>
+
 </div>
