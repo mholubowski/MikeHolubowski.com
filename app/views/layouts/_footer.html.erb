@@ -6,7 +6,7 @@
 			<%= link_to 'Intro', intro_path %>
 		</div>
 		<div class="span2">
-			<%= raw('<div class="arrow-down"></div>') if params[:action] == 'projects'%>
+			<%= raw('<div class="arrow-down"></div>') if params[:controller] == 'project' || params[:action] == 'projects'%>
 			<%= link_to 'Projects', projects_path %>
 		</div>
 		<div class="span2">

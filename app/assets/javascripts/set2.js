@@ -16,18 +16,18 @@ var count = [1, 2, 3],
     // squiggle oval diamond
     shape = ['s', 'o', 'd'],
     // empty full striped
-    fill = ['e', 'f', 's'];
+    fill  = ['e', 'f', 's'];
 
 // ---------------------------------------------------------------- Card Object
 function Card(id, count, color, shape, fill) {
-    this.id = 'c' + id;
+    this.id    = 'c' + id;
     this.count = count;
     this.color = color;
     this.shape = shape;
-    this.fill = fill;
+    this.fill  = fill;
     this.combo = count + color + shape + fill;
     this.state = 'unclicked';
-    this.html = "<div id='" + this.id + "' class='unclicked card' >";
+    this.html  = "<div id='" + this.id + "' class='unclicked card' >";
     for (var i = 0; i < this.count; i++) {
         this.html += "<span class='shape shapes-" + this.combo.substr(1, 4) + "'></span>";
     }
