@@ -27,4 +27,7 @@ class ProjectController < ApplicationController
 			limit: 10)
 	end
 	
+	def true_false
+	end
+	
 end

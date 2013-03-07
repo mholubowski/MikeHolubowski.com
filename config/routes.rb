@@ -22,6 +22,7 @@ Mikeholubowski::Application.routes.draw do
   match '/projects/mikeho'       => 'project#mikeho'
   match '/projects/outfit'       => 'project#outfit'
   match '/projects/set'          => 'project#set'
+  match '/projects/true_false'          => 'project#true_false'
 
   resources :set_players
   # The priority is based upon order of creation:
