@@ -54,16 +54,17 @@ function Problem() {
 	this.check = function(choice){
 		if (choice == this.info[4]){
 			score++;
-			$('#score span').html(score);
+			$('#current_score').html(score);
+			$('#tracker').append('<div class="green">&#10003;</div>')
 			newProblem();
 		} 
 		else {
 			score -= 1;
-			$('#score span').html(score);
+			$('#current_score').html(score);
+			$('#tracker').append('<div class="red">X</div>')
 			newProblem();
 		}
 	};
-
 }
 
 function newProblem(){
@@ -82,3 +83,24 @@ function newProblem(){
 $(document).ready(function(){
 	newProblem();
 })
+
+$(document).keydown(function(e){
+    if (e.keyCode == 37) { 
+    	var true_button = $('#true');
+       true_button.click();
+       true_button.css('background-color','#ddd');
+       setTimeout(function(){
+       	 true_button.css('background-color','#fff');
+       }, 100)
+       return false;
+    }
+    if (e.keyCode == 39) { 
+    	var false_button = $('#false');
+       false_button.click();
+       false_button.css('background-color','#ddd');
+       setTimeout(function(){
+       	 false_button.css('background-color','#fff');
+       }, 100)
+       return false;
+    }
+});
