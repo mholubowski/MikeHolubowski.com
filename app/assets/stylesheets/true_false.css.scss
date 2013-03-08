@@ -31,7 +31,7 @@
 				display: inline-block;
 				&.red{
 					color: red;
-					padding: 2px 0;
+					padding: 7px 6px;
 					&:hover{
 						color: lighten(red, 20%);
 						cursor: hand;
@@ -40,7 +40,7 @@
 				}
 				&.green{
 					color: green;
-					padding: 2px 0;
+					padding: 7px 0;
 					&:hover{
 						color: lighten(green, 20%);
 						cursor: hand;
