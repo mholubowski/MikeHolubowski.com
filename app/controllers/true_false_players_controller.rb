@@ -1,4 +1,4 @@
-class SetPlayersController < ApplicationController
+class TrueFalsePlayersController < ApplicationController
 
   def new
   	
@@ -9,7 +9,7 @@ class SetPlayersController < ApplicationController
     if @setPlayer.save
       respond_to do |format|
         format.html do    
-          redirect_to projects_set_path
+          redirect_to projects_true_false_path
         end
         format.js
       end
