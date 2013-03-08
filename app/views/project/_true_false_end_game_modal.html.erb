@@ -10,7 +10,7 @@
 						<%= form_for TrueFalsePlayer.new, remote: false do |f| %>
 						<%= f.label :name %>
 						<%= f.text_field :name, :class => 'submittable' %>
-						<%= f.hidden_field 'high_score', :class => 'submittable' %>
+						<%= f.hidden_field :high_score, id: 'hidden_score', :class => 'submittable' %>
 						
 						<br> 
 						<%= f.submit 'Submit!'%>

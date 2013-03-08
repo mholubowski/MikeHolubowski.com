@@ -85,10 +85,18 @@ function newProblem(){
 	})
 }
 
+function endGame(){
+	$('#true_false_highScoreModal').modal();
+	$('#true_false_highScoreModal #score-big').html(score);
+	$('#true_false_highScoreModal #hidden_score').val(score);
+}
+
 window.setInterval(function () {
     var original = parseInt($('#time').html(), 10);
     $('#time').html(original - 1);
-
+    if (original == 1){
+    	endGame();
+    }
 }, 1000);
 
 $(document).ready(function(){
