@@ -85,6 +85,12 @@ function newProblem(){
 	})
 }
 
+window.setInterval(function () {
+    var original = parseInt($('#time').html(), 10);
+    $('#time').html(original - 1);
+
+}, 1000);
+
 $(document).ready(function(){
 	newProblem();
 })
