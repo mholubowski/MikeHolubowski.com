@@ -15,6 +15,8 @@
 	}
 
 	#score{
+		position: relative;
+		bottom: 96px;
 		margin-left: auto;
 		margin-right: auto;
 		text-align: center;
@@ -27,20 +29,20 @@
 		font-size: 3.0em;
 		div#tracker{
 			padding-top: 20px;
-			div{
+			a{
 				display: inline-block;
 				&.red{
 					color: red;
 					padding: 7px 6px;
 					&:hover{
-						color: lighten(red, 20%);
+						color: darken(red, 20%);
 						cursor: hand;
 						cursor: pointer;
 					}
 				}
 				&.green{
 					color: green;
-					padding: 7px 0;
+					padding: 7px 2px;
 					&:hover{
 						color: lighten(green, 20%);
 						cursor: hand;
@@ -61,7 +63,7 @@
 			margin-right: auto;
 			text-align: center;
 			height: 50px;
-			width: 200px;
+			width: 45%;
 			background-color: #fff;
 			border: 1px solid #ccc;
 			padding-top: 30px;
@@ -69,7 +71,7 @@
 			color: #000;
 			font-size: 3.0em;
 			&:hover{
-				background-color: #ddd;
+				background-color: rgb(232, 243, 248);
 				cursor: hand;
 				cursor: pointer;
 			}
@@ -82,4 +84,43 @@
 	#false{
 		border-bottom: 3px solid red;
 	}
+}
+
+
+// *** ----------- Media Queries ---------- *** 
+
+@media screen and (max-width:1200px) {
+	
+
+}
+
+
+@media screen and (max-width: 979px) {
+
+
+}
+
+@media screen and (max-width: 767px){
+	#true_false_container{
+		#score{
+			bottom: 0px !important;
+		}
+	}
+
+}
+
+@media screen and (max-width: 480px){
+	#true_false_container{
+		#score{
+			bottom: 0px !important;
+		}
+		#true{
+			margin-top: 30px;
+		}
+		#false{
+			margin-top: 30px;
+			margin-bottom: 20px;
+		}
+	}
+
 }

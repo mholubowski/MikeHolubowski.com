@@ -25,6 +25,7 @@ Mikeholubowski::Application.routes.draw do
   match '/projects/true_false'          => 'project#true_false'
 
   resources :set_players
+  resources :true_false_players
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

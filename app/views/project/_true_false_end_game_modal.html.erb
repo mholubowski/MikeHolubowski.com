@@ -1,4 +1,4 @@
-		<div id="highScoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div id="true_false_highScoreModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 				<h3 id="myModalLabel">High Score!</h3>
@@ -9,7 +9,7 @@
 						<p>You're a champ!</p>
 						<%= form_for TrueFalsePlayer.new, remote: false do |f| %>
 						<%= f.label :name %>
-						<%= f.text_field 'name', :class => 'submittable' %>
+						<%= f.text_field :name, :class => 'submittable' %>
 						<%= f.hidden_field 'high_score', :class => 'submittable' %>
 						
 						<br> 
@@ -20,7 +20,7 @@
 					
 					<div id="form-high-score" class="span2">
 						<div class="label label-info">Score</div>
-						<div id="score-big">878</div>
+						<div id="score-big">0</div>
 					</div>
 
 				</div>

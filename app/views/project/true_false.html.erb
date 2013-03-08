@@ -1,5 +1,7 @@
 <div id="true_false_container">
+
 	<div class="row">
+
 		<div class="span5 offset4">
 			<div id="question">
 				<span id="one">13</span>
@@ -9,17 +11,13 @@
 				<span id="answer">52</span>
 			</div>
 		</div>
-		<div class="span2">
-			<div id="score">
-				Score: <span id="current_score">0</span>
-				<div id="tracker">
-				<!-- Append Dots here! -->
-				</div>
-			</div>
-		</div>
+
+		
+
 	</div>
 
 	<div class="row">
+
 		<div id="choices" class="span5 offset4">
 			<div id="true">
 				True
@@ -28,8 +26,19 @@
 				False
 			</div>
 			<br>
-			Use your keyboard!
+			<span class="visible-desktop">Use your keyboard!</span>
 		</div>
+
+		<div class="span2" style="text-align:center;">
+			<div id="score">
+				Score: <span id="current_score">0</span>
+				<div id="tracker">
+				<!-- Append Dots here! -->
+				</div>
+			</div>
+		</div>
+
 	</div>
 
+<%= render 'project/true_false_end_game_modal' %>
 </div>

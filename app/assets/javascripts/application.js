@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require twitter/bootstrap/modal
+//= require twitter/bootstrap/tooltip
 //= require_tree .
 
 //----------------- Projects

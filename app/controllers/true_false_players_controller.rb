@@ -5,8 +5,8 @@ class TrueFalsePlayersController < ApplicationController
   end
 
   def create
-  	@setPlayer = SetPlayer.create(params[:set_player])
-    if @setPlayer.save
+  	@trueFalsePlayer = TrueFalsePlayer.create(params[:true_false_player])
+    if @trueFalsePlayer.save
       respond_to do |format|
         format.html do    
           redirect_to projects_true_false_path
