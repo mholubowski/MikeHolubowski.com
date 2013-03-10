@@ -16,13 +16,14 @@ Mikeholubowski::Application.routes.draw do
 
   match '/projects/alliance'     => 'project#alliance' 
   match '/projects/alliedgreeks' => 'project#alliedgreeks' 
+  match '/projects/ball' => 'project#ball' 
   match '/projects/efp'          => 'project#efp' 
   match '/projects/followalong'  => 'project#followalong' 
   match '/projects/ivlaundry'    => 'project#ivlaundry' 
   match '/projects/mikeho'       => 'project#mikeho'
   match '/projects/outfit'       => 'project#outfit'
   match '/projects/set'          => 'project#set'
-  match '/projects/true_false'          => 'project#true_false'
+  match '/projects/true_false'   => 'project#true_false'
 
   resources :set_players
   resources :true_false_players

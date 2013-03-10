@@ -1,0 +1,22 @@
+div#ball-container{
+	text-align: center;
+	height: 800px;
+
+	div#ball-area{
+		height: 500px;
+		width:  600px;
+		border: 1px solid #000;
+		margin-left:  auto;
+		margin-right: auto;
+
+		div#ball{
+			width:  18px;
+			height: 18px;
+			border: 1px solid blue;
+			background-color: #3388AA;
+			position: relative;
+			top:  240px;
+			left: 290px;
+		}
+	}
+}
