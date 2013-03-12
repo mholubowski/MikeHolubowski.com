@@ -1,24 +1,4 @@
 
-// $(document).ready(function(){
-	
-// 	initialize();
-// })
-// var bag = [];
-// var Ball = function(){
-// 	this.selector = $('#ball');
-// 	this.leftPx   = parseInt(this.selector.css('left'));
-// }
-
-// var initialize = function(){
-// 	console.log('init');
-// 	bag.push(new Ball());
-// 	var b = bag[0];
-// }
-
-// var ball = {
-// 	selector: $('#ball'),
-// 	leftPx: parseInt(this.selector.css('left'))
-// }
 
 $(document).ready(function(){
 	// var ball = $('#ball');
@@ -30,25 +10,19 @@ $(document).ready(function(){
 		dropDot();
 	}, 100);
 	
+
+	// ------------------ Buttons
+	$('#btn-random').on('click', function(){
+		randomVelocity()
+	});
+	$('#btn-clear').on('click', function(){
+		$('.dot').remove();
+	})
 })
 
-// var leftPx = ball.css('left');
-// var rightPx = ball.css('right');
 
-	// var ball = $('#ball');
-	// var left = parseInt(ball.css('left'));
-	// left += 1;
-	// var velocity = 5;
-	// window.setInterval(
-	// 	ball.css('left', left),
-	// 	1000/velocity
-	// )
 
-// var moveTo = parseInt($('#ball').css('left'), 10) + 1;
 
-// var xMove = function(px){
-// 	$('#ball').css({ left: px});
-// }
 var stats = {
 	xVelocity: 0,
 	yVelocity: 0,
@@ -171,4 +145,13 @@ function dropDot(){
 
 
 // --------------------------------------------------------- Clicking
+function randomVelocity(){
+	var x = Math.floor((Math.random()-.5)*400);
+	var y = Math.floor((Math.random()-.5)*400);
+	setVelecotiy(x,y);
+}
+function setVelecotiy(x, y){
+	velocityX(x);
+	velocityY(y);
+}
 
