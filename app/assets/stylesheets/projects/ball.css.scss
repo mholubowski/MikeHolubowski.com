@@ -3,6 +3,9 @@ div#ball-container{
 	height: 800px;
 
 	div#ball-area{
+		// position relative for absolutely
+		// positioned children
+		position: relative;
 		height: 500px;
 		width:  600px;
 		border: 1px solid #000;
@@ -17,6 +20,12 @@ div#ball-container{
 			position: relative;
 			top:  240px;
 			left: 290px;
+		}
+
+		div.dot{
+			position: absolute;
+			top: 200px;
+			left: 200px;
 		}
 	}
 }

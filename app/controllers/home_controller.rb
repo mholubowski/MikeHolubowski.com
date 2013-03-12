@@ -15,6 +15,10 @@ class HomeController < ApplicationController
 	def projects
 	end
 
+	def rs155	
+		render layout: 'rs155_layout'
+	end
+	
 	def skills
 	end
 

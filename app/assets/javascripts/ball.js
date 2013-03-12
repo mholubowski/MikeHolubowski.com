@@ -24,6 +24,12 @@ $(document).ready(function(){
 	// var ball = $('#ball');
 	document.getElementById('ball').style.left = '290px';
 	document.getElementById('ball').style.top = '240px';
+	var mainBall = $('#ball');
+
+	setInterval(function(){
+		dropDot();
+	}, 100);
+	
 })
 
 // var leftPx = ball.css('left');
@@ -55,6 +61,7 @@ var stats = {
 var xIntervals = [];
 function velocityX(pxPerSecond, direction){
 	// auto set negative/positive
+	var mainBall = $('#ball');
 	if (pxPerSecond > 0){
 		direction = 'positive';
 	}
@@ -149,4 +156,19 @@ function reverseY(){
 	velocityY(stats.yVelocity * -1);
 }
 
+// --------------------------------------------------------- Dot Tracker
+// add 8px to left, -4 px from top
+function dropDot(){
+	ball = document.getElementById('ball');
+	leftPx = parseInt(ball.style.left) + 8;
+	leftPx = String(leftPx + 'px');
+	topPx  = parseInt(ball.style.top) - 4;
+	topPx  = String(topPx + 'px')
+	var html = "<div class='dot' style='left:" + leftPx + ";top:" + topPx + ";'>.</div>";
+	$('#ball-area').append(html);
+}
+
+
+
 // --------------------------------------------------------- Clicking
+

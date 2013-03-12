@@ -10,9 +10,11 @@ Mikeholubowski::Application.routes.draw do
   match '/bio'      => 'home#bio'
   match '/contact'  => 'home#contact'
   match '/intro'    => 'home#intro'
+  match '/rs155'    => 'home#rs155'
   match '/projects' => 'home#projects'
   match '/skills'   => 'home#skills'
   match '/style'    => 'home#styleTest'
+
 
   match '/projects/alliance'     => 'project#alliance' 
   match '/projects/alliedgreeks' => 'project#alliedgreeks' 
