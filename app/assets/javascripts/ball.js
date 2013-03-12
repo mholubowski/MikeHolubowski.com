@@ -1,23 +1,23 @@
 
 
 $(document).ready(function(){
-	// var ball = $('#ball');
-	document.getElementById('ball').style.left = '290px';
-	document.getElementById('ball').style.top = '240px';
-	var mainBall = $('#ball');
+	// // var ball = $('#ball');
+	// document.getElementById('ball').style.left = '290px';
+	// document.getElementById('ball').style.top = '240px';
+	// var mainBall = $('#ball');
 
-	setInterval(function(){
-		dropDot();
-	}, 100);
+	// setInterval(function(){
+	// 	dropDot();
+	// }, 100);
 	
 
-	// ------------------ Buttons
-	$('#btn-random').on('click', function(){
-		randomVelocity()
-	});
-	$('#btn-clear').on('click', function(){
-		$('.dot').remove();
-	})
+	// // ------------------ Buttons
+	// $('#btn-random').on('click', function(){
+	// 	randomVelocity()
+	// });
+	// $('#btn-clear').on('click', function(){
+	// 	$('.dot').remove();
+	// })
 })
 
 
