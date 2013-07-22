@@ -37,13 +37,13 @@
 // 	history.pushState(null, null, linkTarget);
 // }
 
-$(window).resize(function() {
-	$('#width-display').html('width: ' + $(window).width() + 'px') 
-});
+// $(window).resize(function() {
+// 	$('#width-display').html('width: ' + $(window).width() + 'px') 
+// });
 
 
 
-$(document).ready(function() {
+// $(document).ready(function() {
 
 	// $('#projects a').on('click', function(e){
 	// 	e.preventDefault();
@@ -57,13 +57,13 @@ $(document).ready(function() {
 	// })
 
 	// Browser Width for working w/ breakpoints
-	$('#width-display').html('width: ' + $(window).width() + 'px') 
+// 	$('#width-display').html('width: ' + $(window).width() + 'px') 
 
-	$('#width-display').on('click', function() {
-		console.log('breakpoint ' + $(window).width());
-	})
+// 	$('#width-display').on('click', function() {
+// 		console.log('breakpoint ' + $(window).width());
+// 	})
 
-});
+// });
 
 
 

@@ -11,6 +11,12 @@
  *= require_self
  *= require_tree .
  *= require jquery.ui.all
+ *= require projects/ball
+ *= require projects/project
+ *= require projects/set
+ *= require projects/set_cards
+ *= require projects/set_player
+ *= require projects/true_false
  */
 @import "twitter/bootstrap";
 @import "twitter/bootstrap/responsive";

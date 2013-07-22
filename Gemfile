@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '1.9.2'
 gem 'rails', '3.2.8'
 # gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
@@ -13,13 +14,11 @@ gem 'jquery-rails', '2.0.2'
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails', '2.11.0'
-  gem 'guard-rspec', '1.2.1'
-  gem 'guard-spork', '1.2.0'  
-  gem 'spork', '0.9.2'
+  # gem 'guard-rspec', '1.2.1'
+  # gem 'guard-spork', '1.2.0'  
+  # gem 'spork', '0.9.2'
   gem 'better_errors'
   # gem 'binding_of_caller'
-
-  # gem 'rails-dev-tweaks', '~> 0.6.1'
 end
 
 # Gems used only for assets and not required
@@ -41,7 +40,6 @@ end
 group :production do
   gem 'pg', '0.12.2'
   gem 'newrelic_rpm'
-
 end
 
 # To use ActiveModel has_secure_password
