@@ -1,9 +1,21 @@
-<h1>HEYposseterss</h1>
+<h1>Heyyy possterrss</h1>
+
+<% 
+notes = {
+ 'd' => "Black 'Alpha Tau Omega' and dark girls.",
+ 'b' => "White 'Alpha Tau Omega'",
+ 'h' => "Black kid on orange background.",
+ 'a' => "Sun setting at the bottom.",
+ 'c' => "Orange background"
+}
+ %>
+
 
 <% (['d', 'b', 'h', 'a', 'c']).each do |letter| %>
 
 <div class="rally-wrapper">
-<%= image_tag("rally-posters/ato-rally-poster-1-#{letter}.png", width: '480') %>
+  <%= image_tag("rally-posters/ato-rally-poster-1-#{letter}.png", width: '480') %>
+  <div class="notes"><div class="letter">Version: <%= letter %></div><%= notes[letter] %></div>
 </div>
 
 <% end %>
