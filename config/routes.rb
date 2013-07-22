@@ -17,7 +17,8 @@ Mikeholubowski::Application.routes.draw do
 
 
   match '/projects/alliance'     => 'project#alliance' 
-  match '/projects/alliedgreeks' => 'project#alliedgreeks' 
+  match '/projects/alliedgreeks' => 'project#alliedgreeks'
+  match '/projects/ato_rally_poster'     => 'project#ato_rally_poster' 
   match '/projects/ball'         => 'project#ball' 
   match '/projects/efp'          => 'project#efp' 
   match '/projects/followalong'  => 'project#followalong' 

@@ -57,8 +57,9 @@ h1.h1-header {
 
 #set{
 	background-image: image-url("setLogo.png");
+	border: solid 1px red;
+	height: 30px;
 	background-color: #6BF9FB !important;
-
 }
 #trueFalse{
 	background-image: image-url("trueFalseLogo.png");

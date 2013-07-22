@@ -33,7 +33,6 @@ GEM
     better_errors (0.5.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    binding_of_caller (0.6.8)
     bootstrap-sass-rails (2.3.0.0)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
@@ -110,9 +109,6 @@ GEM
       activesupport (= 3.2.8)
       bundler (~> 1.0)
       railties (= 3.2.8)
-    rails-dev-tweaks (0.6.1)
-      actionpack (~> 3.1)
-      railties (~> 3.1)
     railties (3.2.8)
       actionpack (= 3.2.8)
       activesupport (= 3.2.8)
@@ -154,8 +150,6 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    turbolinks (0.6.1)
-      coffee-rails
     tzinfo (0.3.35)
     uglifier (1.2.3)
       execjs (>= 0.3.0)
@@ -168,7 +162,6 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby (= 3.0.1)
   better_errors
-  binding_of_caller
   bootstrap-sass-rails
   bootstrap-will_paginate (= 0.0.6)
   coffee-rails (= 3.2.2)
@@ -180,11 +173,9 @@ DEPENDENCIES
   newrelic_rpm
   pg (= 0.12.2)
   rails (= 3.2.8)
-  rails-dev-tweaks (~> 0.6.1)
   rspec-rails (= 2.11.0)
   sass-rails (= 3.2.5)
   spork (= 0.9.2)
   sqlite3
-  turbolinks
   uglifier (= 1.2.3)
   will_paginate (= 3.0.3)

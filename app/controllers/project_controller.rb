@@ -29,5 +29,8 @@ class ProjectController < ApplicationController
 	
 	def true_false
 	end
+
+	def ato_rally_poster
+	end
 	
 end

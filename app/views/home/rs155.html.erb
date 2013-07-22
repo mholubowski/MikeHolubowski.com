@@ -180,29 +180,29 @@
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
     <script>  
-        $(document).ready(function(){
-            $("a").click(function() {
-                $("html, body").animate({
-                    scrollTop: $($(this).attr("href")).offset().top-100 + "px"
-                }, {
-                    duration: 750,
-                    easing: "swing"
-                });
-                return false;
-            });
-        $('.writing').hide();
-        askForPassword('Please enter the password Dr. Hecht.');
-        })
+        // $(document).ready(function(){
+        //     $("a").click(function() {
+        //         $("html, body").animate({
+        //             scrollTop: $($(this).attr("href")).offset().top-100 + "px"
+        //         }, {
+        //             duration: 750,
+        //             easing: "swing"
+        //         });
+        //         return false;
+        //     });
+        // $('.writing').hide();
+        // askForPassword('Please enter the password Dr. Hecht.');
+        // })
 
-        function askForPassword(prompt){
-            var password = window.prompt(prompt);
-            if (password.toLowerCase() == 'rs155' || password.toLowerCase() == 'rs 155'){
-                $('.writing').show(1300);
-            }
-            else{
-                askForPassword('Wrong password! Please try again.')
-            }
-        }
+        // function askForPassword(prompt){
+        //     var password = window.prompt(prompt);
+        //     if (password.toLowerCase() == 'rs155' || password.toLowerCase() == 'rs 155'){
+        //         $('.writing').show(1300);
+        //     }
+        //     else{
+        //         askForPassword('Wrong password! Please try again.')
+        //     }
+        // }
     </script>
 
 </body>
