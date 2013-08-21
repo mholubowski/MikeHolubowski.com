@@ -2,22 +2,15 @@
 <div class="container-fluid nav-con">
 	<div id="nav" class="row-fluid shadow">
 
-		<!-- "Mike Holubowski" -->
 		<div class="span4 myName" >
 			<%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
 			<hr style="margin-top:4px;">
 			<hr style="width:90%;">
-			<!-- <h4 class="code-blue">Web Development / Technology Management</h4> -->
-			<!-- <h4 id="width-display"></h4> --> 
 		</div>
 
 		<!-- Gravatar -->
 		<div class="span4" style="text-align:center">
-			<div class="label label-info" style='margin-left: -20px;'>Work in progress!</div>
-			<%= image_tag 'mike.jpeg', alt: 'Mike Holubowki at Economic Summit, SB', class: 'mike' %>
-		</a>
-		<%= link_to image_tag('linkedin.png'), "http://www.linkedin.com/in/mikeholubowski", id: 'nav-linkedin' %>
-
+			
 	</div>
 
 	<!-- Typed heading -->
@@ -27,25 +20,18 @@
 
 				<%= 
 				case 
-
 				when params[:action] == 'intro'
 					"Clever clever clever words"
-
 				when params[:action] == 'home'
 					"Still a work in progress.."
-
 				when params[:action] == 'projects'
 					"Past and present projects" 
-
 				when params[:controller] == 'project'
 					"Past and present projects" 
-
 				when params[:action] == 'skills'
 					"An honest assesment of skills"
-
 				when params[:action] == 'bio'
 					"A bit about who I am today.."
-
 				when params[:action] == 'contact'
 					"Feel free to contact me!"
 				end

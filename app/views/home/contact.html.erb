@@ -2,26 +2,27 @@
 <hr class="dashed">
 
 <div class="row-fluid">
-	<div class="span2"></div>
-	
-	<div class="span3 well contactWell">
-		<%= link_to image_tag("envelope.png") %>
-		<h4>Email:</h4>
-		<h3>mike.holubowski@gmail.com</h3>
-	</div>
-	
-	<div class="span2 visible-desktop">
-		<br>
-		<br>
-		<br>
-		<p>< -- either one --></p>
+	<div class="contact-container">
+		
+		<div class="contactWell">
+			<div class='contact-icon'><%=image_tag("envelope.png") %></div>
+			<h4>Email:</h4>
+			<h3>mike.holubowski@gmail.com</h3>
+		</div>
+
+		<div class="contactWell">
+			<div class='contact-icon linkedin'><%= image_tag("linkedin.png") %></div>
+			<h4>LinkedIn</h4>
+			<h3><%= link_to 'mholubowski', 'http://www.linkedin.com/in/mikeholubowski' %></h3>
+		</div>
+
+		<% resume_url = 'https://docs.google.com/document/d/1LzcX-ieViOXtY9FmAZDpiQDQmvlllZwoHd7mxJLbj-c/edit?usp=sharing' %>
+		<div class="contactWell">
+			<div class="contact-icon"><%=image_tag("resume_icon1.png") %></div>
+			<h4>Resume</h4>
+			<h3><%= link_to 'View', resume_url %></h3>
+		</div>
+
 	</div>
 
-		<!-- Class 'contactWell' for MedQuer -->
-	<div class="span3 well contactWell">
-		<%= link_to image_tag("skype.png") %>
-		<h4>Skype Id:</h4>
-		<h3>michael.holubowski</h3>
-
-	</div>
 </div>
