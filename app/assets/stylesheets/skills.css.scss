@@ -1,0 +1,12 @@
+.progress-box {
+  height: 25px;
+  width:  25px;
+  border: solid 1px $app-bg-color;
+  background-color: lighten($app-bg-color, 10%);
+  &.active-box {
+    background-color: $progress-box;
+  }
+  &:hover {
+    background-color: $progress-box-active;
+  }
+}

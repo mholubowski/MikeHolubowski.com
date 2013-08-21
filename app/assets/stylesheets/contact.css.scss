@@ -1,0 +1,38 @@
+.contact-container {
+  text-align: center;
+}
+
+.contactWell {
+  border: 1px solid rgb(218, 218, 218);
+  display: inline-block;
+  text-align: center;
+  background-color: #fff;
+  width: 170px;
+  padding: 5px;
+  margin: 10px;
+  &:hover {
+    background-color: #F4F8FF;
+    box-shadow: 1px 1px 3px -1px #ccc;
+  }
+
+  .contact-icon {
+    &.linkedin img {
+      min-width: 70px;
+    }
+    img {
+      min-width: 95px;
+      max-width: 100px;
+      max-height: 65px;
+    }
+    i {
+      font-size: 30px;
+    }
+  }
+  h3{
+    color: $code-blue;
+    font-size: .9em;
+  }
+  h4{
+    margin-top: 40px;
+  }
+}

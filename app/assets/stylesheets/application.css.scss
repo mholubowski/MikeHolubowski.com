@@ -16,7 +16,6 @@
 @import "twitter/bootstrap/responsive";
 // @import "font-awesome";
  
-/* App Wide Variable */
 @import "variables";
 
 a:hover{
@@ -26,9 +25,7 @@ a:hover{
 body {
 	background-color: $app-bg-color;
 	font-weight: 200;
-	// font-family: "Andale Mono", AndaleMono, monospace;
 	color: $code-black;
-	// padding-bottom:20px;
 	h1,h2,h3,h4,h5,h6{
 		font-weight: 300;
 	}
@@ -74,7 +71,6 @@ hr {
 
 .well {
 	background-color: lighten($app-bg-color, 35%);
-	//color: darken($code-yellow, 15%);
 	h3{
 		color: $code-yellow;
 		span {
@@ -93,97 +89,3 @@ h1.h1-header {
 }
 
 
-/* _________________________________________________________ Skills Page */
-
-.progress-box {
-	height: 25px;
-	width:  25px;
-	border: solid 1px $app-bg-color;
-	background-color: lighten($app-bg-color, 10%);
-	&.active-box {
-		background-color: $progress-box;
-	}
-	&:hover {
-		background-color: $progress-box-active;
-	}
-}
-
-/* _________________________________________________________ Bio Page */
-
-.picture-box {
-	height: 250px;
-	border: 1px solid darken($app-bg-color, 1%);
-	border-bottom: 3px solid $code-yellow;
-	background-color: lighten($app-bg-color, 10%);
-	text-align: center;
-	padding: 15px;
-	p {
-		margin:7px 0px;
-	}
-	img {
-		height: auto;
-		max-width: 95%;
-		max-height: 200px;
-		border-radius: 10px;
-	}
-	// NOTE size of png is 250x222
-	-webkit-box-shadow: 0 7px 24px -3px $code-yellow;
-	   -moz-box-shadow: 0 7px 24px -3px $code-yellow;
-	        box-shadow: 0 7px 24px -3px $code-yellow;
-	&:hover {
-			border-bottom: 3px solid $code-blue;
-
-		-webkit-box-shadow: 0 7px 24px -3px $code-blue;
-	   -moz-box-shadow: 0 7px 24px -3px $code-blue;
-	        box-shadow: 0 7px 24px -3px $code-blue;
-	}        
-}
-
-
-
-.bio {
-	margin-bottom: 40px;
-	padding-bottom: 25px;
-	border-bottom: 2px solid gray;
-}
-
-/* _________________________________________________________ Projects Page */
-
-
-
-
-/* _________________________________________________________ Contact Page */
-
-.contact-container {
-	text-align: center;
-}
-
-.contactWell {
-	border: 1px solid rgb(218, 218, 218);
-	display: inline-block;
-	text-align: center;
-	background-color: #fff;
-	width: 170px;
-	padding: 5px;
-	margin: 10px;
-	.contact-icon {
-		&.linkedin img {
-			min-width: 70px;
-		}
-		img {
-			min-width: 95px;
-			max-width: 100px;
-			max-height: 65px;
-		}
-		i {
-			font-size: 30px;
-		}
-	}
-	h3{
-		color: $code-blue;
-		font-size: .9em;
-	}
-	h4{
-		margin-top: 40px;
-	}
-}
