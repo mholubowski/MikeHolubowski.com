@@ -8,3 +8,10 @@ $code-black: #333;
 
 $progress-box: rgba(255, 213, 115, 0.7);
 $progress-box-active: rgba(255, 213, 115, 0.8);
+
+@mixin clickable {
+  &:hover {
+    cursor: pointer;
+    cursor: hand;
+  }
+}

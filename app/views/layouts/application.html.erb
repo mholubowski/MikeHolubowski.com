@@ -18,8 +18,8 @@
 	</div>
 
 	<% if current_page? root_path %>
-		<% n = [1,2,3,4,5].shuffle.first %>
-		<div class="backdrop-image-<%=n%>">
+		<% n = (1..11).to_a.shuffle.first %>
+		<div class="backdrop-image-12">
 		<div class="backdrop-color">
 	<% end %>
 

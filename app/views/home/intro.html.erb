@@ -2,10 +2,31 @@
 	<div class="row-fluid">
 		<div class="span10 offset1">
 			<div class="slogan" style="color:white;">
-				Here I will put <span class="blue">cool</span> words
+				I develop <span class="blue">web</span> applications
 			</div>
 		</div>
 	</div>
 	
+  <!-- option 1 -->
+  <div class="menu-btns-container-1">
+    <div class="menu-btns-wrapper">
+      <div class="menu-btn"><%= link_to 'projects', projects_path %></div>
+      <div class="menu-btn"><%= link_to 'skills', skills_path %></div>
+      <div class="menu-btn"><%= link_to 'bio', bio_path %></div>
+      <div class="menu-btn"><%= link_to 'contact', contact_path %></div>
+    </div>
+  </div>
+
+  <!-- option 2 -->
+  <div class="menu-btns-container-2" style="display:none">
+    <div class="menu-btns-wrapper">
+      <div class="menu-btn"><%= link_to 'projects', projects_path %></div>
+      <div class="menu-btn"><%= link_to 'skills', skills_path %></div>
+      <div class="menu-btn"><%= link_to 'bio', bio_path %></div>
+      <div class="menu-btn"><%= link_to 'contact', contact_path %></div>
+    </div>
+  </div>
+
+
 	<%#= render 'rainbow' %>
 </div>

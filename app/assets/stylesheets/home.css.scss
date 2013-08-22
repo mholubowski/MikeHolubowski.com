@@ -5,10 +5,15 @@
 @import 'variables';
 
 .backdrop-image-1 {
-  background-image: image-url("backdrops/sf-rowing.JPG");
+  background-image: image-url("backdrops/sf-rowing.jpg");
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 101%;
   height: 500px;
+  -webkit-transition: background-size 2s;
+  &:hover {
+    background-size: 100%;
+    -webkit-transition: background-size 2s;
+  }
 }
 
 .backdrop-image-2 {
@@ -31,13 +36,49 @@
   background-image: image-url("backdrops/lighthousemorning.jpg");
 }
 
+.backdrop-image-6 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/blurred_lines.jpg");
+}
+
+.backdrop-image-7 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/gnarly.jpg");
+}
+
+.backdrop-image-8 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/night-city.jpg");
+}
+
+.backdrop-image-9 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/overhead-hi-res.jpg");
+}
+
+.backdrop-image-10 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/top_view.jpg");
+}
+
+.backdrop-image-11 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/unsplash-kitsune-3.jpg");
+}
+
+.backdrop-image-12 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/mike_by_lake.jpg");
+}
+
 .backdrop-color {
-  background-color: rgba(0,0,0,.6);
+  background-color: rgba(0,0,0,.5);
   height: 100%;
   width: 100%; 
   -webkit-transition: background-color 2s;
   &:hover {
-    background-color: rgba(0,0,0,.4);
+    background-color: rgba(0,0,0,.8);
+
     -webkit-transition: background-color 2s;
   } 
 }
