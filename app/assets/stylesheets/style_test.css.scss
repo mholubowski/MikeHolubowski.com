@@ -1,0 +1,35 @@
+
+
+.color-palette-container {
+  .color-palette-wrap {
+    display: inline-block;
+    .title {
+      display: inline-block;
+      width: 200px;
+      text-align: center;
+    }
+    .inner {
+      border: 1px solid #434343;
+      width: 200px;
+      height: 200px;
+    }
+  }
+  .a {
+    background-color: $app-bg-color;
+  }
+  .b {
+    background-color: $code-blue;
+  }
+  .c {
+    background-color: $complement-1;
+  }
+  .d {
+    background-color: $code-black;
+  }
+  .e {
+    background-color: $app-bg-color-white;
+  }
+  .f {
+    background-color: $yellow-orange;
+  }
+}

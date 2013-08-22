@@ -9,7 +9,9 @@
   background-repeat: no-repeat;
   background-size: 101%;
   height: 500px;
+  min-width: 1200px;
   -webkit-transition: background-size 2s;
+  box-shadow: inset 0px 0px 22px 2px #3F3F3F;
   &:hover {
     background-size: 100%;
     -webkit-transition: background-size 2s;
@@ -71,14 +73,32 @@
   background-image: image-url("backdrops/mike_by_lake.jpg");
 }
 
+.backdrop-image-13 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/mike_by_lake2.jpg");
+  background-position-y: -75px;
+}
+
+.backdrop-image-14 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/mike_by_mount1.jpg");
+  background-position-x: -183px;
+  background-size: 116%;
+  min-height: 400px;
+  -webkit-transition: background-size 2s;
+  &:hover {
+    background-size: 115%;
+    -webkit-transition: background-size 2s;
+  }
+}
+
 .backdrop-color {
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.3);
   height: 100%;
   width: 100%; 
   -webkit-transition: background-color 2s;
   &:hover {
-    background-color: rgba(0,0,0,.8);
-
+    background-color: rgba(0,0,0,.7);
     -webkit-transition: background-color 2s;
   } 
 }

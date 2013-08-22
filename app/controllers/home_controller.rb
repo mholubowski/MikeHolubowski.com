@@ -7,6 +7,7 @@ class HomeController < ApplicationController
 	end
 
 	def intro
+		@n = params[:n] || 7
 	end
 
 	def home
@@ -22,7 +23,7 @@ class HomeController < ApplicationController
 	def skills
 	end
 
-	def styleTest
+	def style_test
 	end
 	
 end

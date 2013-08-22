@@ -1,10 +1,10 @@
-$app-bg-color: #4A4A4A;
 $app-bg-color: #fcfcfc; 
-$app-bg-color-white: #e9e9e9; //NOTE very nice color
-$code-yellow: #FFD573;
-$code-yellow: #2B89BB;
+$app-bg-color-white: #e9e9e9;
 $code-blue: #2B89BB;
+$complement-1: complement($code-blue);
 $code-black: #333;
+
+$yellow-orange: #e1ac67;
 
 $progress-box: rgba(255, 213, 115, 0.7);
 $progress-box-active: rgba(255, 213, 115, 0.8);

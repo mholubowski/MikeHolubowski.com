@@ -18,6 +18,7 @@ group :development, :test do
   # gem 'guard-spork', '1.2.0'  
   # gem 'spork', '0.9.2'
   gem 'better_errors'
+  gem 'pry'
   # gem 'binding_of_caller'
 end
 

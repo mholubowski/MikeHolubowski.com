@@ -52,7 +52,7 @@ div.container-fluid {
 }
 
 .code-yellow {
-	color: $code-yellow;
+	color: $code-blue;
 }
 
 .code-blue {
@@ -71,7 +71,7 @@ hr {
 .well {
 	background-color: lighten($app-bg-color, 35%);
 	h3{
-		color: $code-yellow;
+		color: $code-blue;
 		span {
 			font-size: 10px;
 			color: gray;

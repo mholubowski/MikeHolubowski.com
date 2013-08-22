@@ -9,7 +9,7 @@ Mikeholubowski::Application.routes.draw do
   match '/rs155'    => 'home#rs155'
   match '/projects' => 'home#projects'
   match '/skills'   => 'home#skills'
-  match '/style'    => 'home#styleTest'
+  match '/style'    => 'home#style_test'
 
   match '/projects/alliance'         => 'project#alliance' 
   match '/projects/alliedgreeks'     => 'project#alliedgreeks'
