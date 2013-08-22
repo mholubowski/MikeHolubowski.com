@@ -45,32 +45,24 @@ div.container-fluid.nav-con {
 
 #links {
 	margin-bottom: 10px;
-	ul{
+	ul { 
 		display: inline;
 		padding-bottom: 5px;
-		li{
+		li {
 			display: inline;
 			a {
 				color: $code-black;
+				&.active{
+					color: red;
+				}
 				&:hover{
 					text-decoration: none;
 					color: $code-yellow;
-				}
-				.active {
-					color: $code-yellow !important;
 				}
 			}
 		}
 	}
 
-}
-
-
-.active {
-	margin-left: 10px;
-	margin-right: 10px;
-
-	color: $code-yellow !important;
 }
 
 

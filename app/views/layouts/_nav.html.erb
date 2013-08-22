@@ -4,8 +4,6 @@
 
 		<div class="span4 myName" >
 			<%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
-			<hr style="margin-top:4px;">
-			<hr style="width:90%;">
 		</div>
 
 		<!-- Gravatar -->
@@ -15,7 +13,7 @@
 
 	<!-- Typed heading -->
 	<div class="span4">
-		<div class="hidden-phone" style="margin:0 auto;">
+		<div class="hidden-phone" style="margin:0 auto; display: none;">
 			<h4 class="code-yellow typed">
 
 				<%= 
@@ -38,34 +36,25 @@
 
 				%>	<span>&nbsp;</span>
 
-			</h4>
+	</h4>
 		</div>
-		<br>
-		<hr style="width:90%; margin-left:10%;">
-		<hr>
+		<!-- <br> -->
 
 		<!-- Page Navigation -->
 		<div id="links">
 			<br>
 			<ul> 
 
-				<li><%= link_to "intro", root_url, class: 'active' if params[:action] == 'intro' %> 
-						<%= link_to raw("&raquo; intro"), root_url if params[:action] != 'intro' %></li>
+				<li><%= link_to "intro", root_url, class: ('active' if params[:action] == 'intro') %> </li>
 
-				<% if params[:controller] == 'project' || params[:action] == 'projects' %>
-				<li> <%= link_to "projects", projects_path, class: 'active' %> </li>
+				<li> <%= link_to "projects", projects_path, class: ('active' if params[:controller] == 'project' || params[:action] == 'projects') %> </li>
 				<% else %>
-				<li> <%= link_to raw("&raquo; projects"), projects_path %> </li>
-				<% end %>
 
-				<li><%= link_to "skills", skills_path, class: 'active' if params[:action] == 'skills' %> 
-						<%= link_to raw("&raquo; skills"), skills_path if params[:action] != 'skills' %></li>
+				<li><%= link_to "skills", skills_path, class: ('active' if params[:action] == 'skills') %> 
 
-				<li><%= link_to "bio", bio_path, class: 'active' if params[:action] == 'bio' %>  
-						<%= link_to raw("&raquo; bio"), bio_path if params[:action] != 'bio' %></li>
+				<li><%= link_to "bio", bio_path, class: ('active' if params[:action] == 'bio') %>  
 
-				<li><%= link_to "contact", contact_path, class: 'active' if params[:action] == 'contact' %>  
-						<%= link_to raw("&raquo; contact"), contact_path if params[:action] != 'contact' %></li>
+				<li><%= link_to "contact", contact_path, class: ('active' if params[:action] == 'contact') %>  
 								
 			</ul>
 		</div>

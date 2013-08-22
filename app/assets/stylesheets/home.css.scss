@@ -4,9 +4,41 @@
 
 @import 'variables';
 
-.backdrop {
+.backdrop-image-1 {
   background-image: image-url("backdrops/sf-rowing.JPG");
+  background-repeat: no-repeat;
   background-size: 100%;
-  height: 600px;
+  height: 500px;
+}
+
+.backdrop-image-2 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/barcelona-boardwalk.jpg");
+}
+
+.backdrop-image-3 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/fields.jpg");
+}
+
+.backdrop-image-4 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/maldives.jpg");
+}
+
+.backdrop-image-5 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/lighthousemorning.jpg");
+}
+
+.backdrop-color {
+  background-color: rgba(0,0,0,.6);
+  height: 100%;
+  width: 100%; 
+  -webkit-transition: background-color 2s;
+  &:hover {
+    background-color: rgba(0,0,0,.4);
+    -webkit-transition: background-color 2s;
+  } 
 }
 

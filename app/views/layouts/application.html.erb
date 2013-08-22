@@ -13,15 +13,23 @@
 	<%= render 'layouts/header' %>
 	<%= render 'layouts/nav' %>
 
+	<div id="work-in-progress">
+		<i class="icon-star-empty"></i>This site is a work in progress! <small>8/21/13</small>
+	</div>
+
 	<% if current_page? root_path %>
-	<div class='backdrop'>
+		<% n = [1,2,3,4,5].shuffle.first %>
+		<div class="backdrop-image-<%=n%>">
+		<div class="backdrop-color">
 	<% end %>
 
-	<div id="main-area" class="container-fluid ">
-		<%= yield %>
-	</div>
+		<div id="main-area" class="container-fluid ">
+			<%= yield %>
+		</div>
+	
 	<% if current_page? root_path %>
-	</div>
+		</div>
+		</div>
 	<% end %>
 
 	<%= render 'layouts/footer' %>
