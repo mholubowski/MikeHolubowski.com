@@ -13,9 +13,16 @@
 	<%= render 'layouts/header' %>
 	<%= render 'layouts/nav' %>
 
-	<div id="main-area" class="container-fluid">
+	<% if current_page? root_path %>
+	<div class='backdrop'>
+	<% end %>
+
+	<div id="main-area" class="container-fluid ">
 		<%= yield %>
 	</div>
+	<% if current_page? root_path %>
+	</div>
+	<% end %>
 
 	<%= render 'layouts/footer' %>
 	<%= render 'layouts/google_analytics' if Rails.env.production? %>
