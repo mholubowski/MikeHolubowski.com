@@ -6,7 +6,10 @@ class Admin::PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
+    @post = Post.new(params[:post]) do |p|
+      # p.user = current_user
+    end
+
     if @post.save
       redirect_to post_path(@post)
     else

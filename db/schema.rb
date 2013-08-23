@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130823072056) do
 
   create_table "posts", :force => true do |t|
     t.string   "title"
-    t.string   "body"
+    t.text     "body"
     t.string   "status"
     t.string   "url_alias"
     t.integer  "user_id"
