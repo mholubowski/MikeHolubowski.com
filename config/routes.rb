@@ -6,10 +6,12 @@ Mikeholubowski::Application.routes.draw do
   match '/logout' => 'sessions#destroy'
   match '/login'  => 'sessions#new'
 
-  resources :posts, only: [:index, :show]
+  scope '/blog' do
+    resources :posts, only: [:index, :show]
+  end
 
   namespace :admin do
-    resources :posts, except: [:index, :show]
+    resources :posts
   end
 
   get "greetings/hello"
