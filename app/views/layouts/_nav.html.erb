@@ -6,39 +6,7 @@
 			<%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
 		</div>
 
-		<!-- Gravatar -->
-		<div class="span4" style="text-align:center">
-			
 	</div>
-
-	<!-- Typed heading -->
-	<div class="span4">
-		<div class="hidden-phone" style="margin:0 auto; display: none;">
-			<h4 class="code-yellow typed">
-
-				<%= 
-				case 
-				when params[:action] == 'intro'
-					"Clever clever clever words"
-				when params[:action] == 'home'
-					"Still a work in progress.."
-				when params[:action] == 'projects'
-					"Past and present projects" 
-				when params[:controller] == 'project'
-					"Past and present projects" 
-				when params[:action] == 'skills'
-					"An honest assesment of skills"
-				when params[:action] == 'bio'
-					"A bit about who I am today.."
-				when params[:action] == 'contact'
-					"Feel free to contact me!"
-				end
-
-				%>	<span>&nbsp;</span>
-
-	</h4>
-		</div>
-		<!-- <br> -->
 
 		<!-- Page Navigation -->
 		<div id="links" style="display:none;">

@@ -1,0 +1,27 @@
+<div class="container-fluid nav-con">
+  <div id="nav" class="row-fluid shadow">
+
+    <div class="span4 myName" >
+      <%= link_to raw('<h1 class="code-yellow">Mike Holubowski</h1>'), root_url %>
+    </div>
+
+
+  </div>
+
+  <!-- Page Navigation -->
+  <div id="links" style="display:none;">
+    <ul> 
+      <li><%= link_to "intro", root_url, class: ('active' if params[:action] == 'intro') %> </li>
+
+      <li> <%= link_to "projects", projects_path, class: ('active' if params[:controller] == 'project' || params[:action] == 'projects') %> </li>
+      <% else %>
+
+      <li><%= link_to "skills", skills_path, class: ('active' if params[:action] == 'skills') %> 
+
+      <li><%= link_to "bio", bio_path, class: ('active' if params[:action] == 'bio') %>  
+
+      <li><%= link_to "contact", contact_path, class: ('active' if params[:action] == 'contact') %>  
+    </ul>
+  </div>
+
+</div>

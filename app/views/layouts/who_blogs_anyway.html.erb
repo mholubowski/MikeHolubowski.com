@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Who Blogs Anyway?</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <%= render 'layouts/who_blogs_anyway/nav' %>
+  
+
+    <div id="main-area" class="container-fluid ">
+      <%= yield %>
+    </div>
+
+  <%= render 'layouts/who_blogs_anyway/footer' %>
+
+  <%= render 'layouts/google_analytics' if Rails.env.production? %>
+</body>
+
+</html>

@@ -1,3 +1,7 @@
 class Post < ActiveRecord::Base
-  attr_accessible :body, :reference, :status, :title, :url_alias
+  belongs_to :user
+  attr_accessible :body, :status, :title, :url_alias
+
+
+
 end
