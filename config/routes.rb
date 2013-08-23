@@ -1,20 +1,13 @@
 Mikeholubowski::Application.routes.draw do
 
-  get "posts/new"
-
-  get "posts/create"
-
-  get "posts/edit"
-
-  get "posts/update"
-
-  get "posts/destroy"
-
-  get "posts/index"
-
-  get "posts/show"
-
   root to: 'home#intro'
+  
+  resources :posts, only: [:index, :show]
+
+  namespace :admin do
+    resources :posts, except: [:index, :show]
+  end
+
   get "greetings/hello"
 
   match '/bio'      => 'home#bio'
