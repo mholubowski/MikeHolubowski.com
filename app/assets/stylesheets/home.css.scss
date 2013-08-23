@@ -7,9 +7,9 @@
 .backdrop-image-1 {
   background-image: image-url("backdrops/sf-rowing.jpg");
   background-repeat: no-repeat;
-  background-size: 101%;
+  background-size: cover;
   height: 500px;
-  min-width: 1200px;
+  // min-width: 1200px;
   -webkit-transition: background-size 2s;
   box-shadow: inset 0px 0px 22px 2px #3F3F3F;
   &:hover {
@@ -83,11 +83,24 @@
   @extend .backdrop-image-1;
   background-image: image-url("backdrops/mike_by_mount1.jpg");
   background-position-x: -183px;
-  background-size: 116%;
-  min-height: 400px;
+  // background-size: 116%;
+  // min-height: 400px;
   -webkit-transition: background-size 2s;
   &:hover {
-    background-size: 115%;
+    // background-size: 115%;
+    -webkit-transition: background-size 2s;
+  }
+}
+
+.backdrop-image-15 {
+  @extend .backdrop-image-1;
+  background-image: image-url("backdrops/mike_by_mount1_reverse.jpg");
+  background-position-x: -183px;
+  // background-size: 116%;
+  // min-height: 400px;
+  -webkit-transition: background-size 2s;
+  &:hover {
+    // background-size: 115%;
     -webkit-transition: background-size 2s;
   }
 }
