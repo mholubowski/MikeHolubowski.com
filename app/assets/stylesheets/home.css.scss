@@ -13,7 +13,7 @@
   -webkit-transition: background-size 2s;
   box-shadow: inset 0px 0px 22px 2px #3F3F3F;
   &:hover {
-    background-size: 100%;
+    // background-size: 100%;
     -webkit-transition: background-size 2s;
   }
 }
@@ -95,7 +95,7 @@
 .backdrop-image-15 {
   @extend .backdrop-image-1;
   background-image: image-url("backdrops/mike_by_mount1_reverse.jpg");
-  background-position-x: -183px;
+  // background-position-x: -183px;
   // background-size: 116%;
   // min-height: 400px;
   -webkit-transition: background-size 2s;
