@@ -1,0 +1,9 @@
+<%= form_tag sessions_path do %>
+    <h1>Who Blogs Anyway?</h1>
+
+    <%= email_field_tag :email, '', placeholder: 'Email', autofocus: true %>
+
+    <%= password_field_tag :password, params[:password], placeholder: "Password" %>
+
+    <%= submit_tag "Log In", class: "blackbutton", id: "submit-login" %>
+<% end %>

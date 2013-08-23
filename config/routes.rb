@@ -2,6 +2,10 @@ Mikeholubowski::Application.routes.draw do
 
   root to: 'home#intro'
   
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/logout' => 'sessions#destroy'
+  match '/login'  => 'sessions#new'
+
   resources :posts, only: [:index, :show]
 
   namespace :admin do
