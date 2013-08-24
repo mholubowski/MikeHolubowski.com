@@ -1,31 +1,24 @@
-<div class="container-fluid nav-con">
-  <div id="nav" class="row-fluid shadow admin">
+<div class="admin-nav-container">
 
-    <div class="span4 myName" >
-      <%= link_to raw('<h1 class="code-yellow">Who Blogs Anyway</h1>'), root_url %>
+  <div id="admin-nav">
+    <div class="nav-inner">
+      <div class="left">
+        <div class="logo nav-el">Who Blogs Anyway</div>
+      </div>
+
+      <div class="right">
+        <%= link_to raw('X'), logout_path, class: 'logout nav-el' %>
+      </div>
     </div>
-
-    <div class="span4 myName">
-      <h1 class="code-yellow">Admin: <%= current_user.name if current_user %></h1>
-    </div>
-
-
   </div>
 
-  <!-- Page Navigation -->
-  <div id="links" style="display:none;">
-    <ul> 
-      <li><%= link_to "intro", root_url, class: ('active' if params[:action] == 'intro') %> </li>
-
-      <li> <%= link_to "projects", projects_path, class: ('active' if params[:controller] == 'project' || params[:action] == 'projects') %> </li>
-      <% else %>
-
-      <li><%= link_to "skills", skills_path, class: ('active' if params[:action] == 'skills') %> 
-
-      <li><%= link_to "bio", bio_path, class: ('active' if params[:action] == 'bio') %>  
-
-      <li><%= link_to "contact", contact_path, class: ('active' if params[:action] == 'contact') %>  
-    </ul>
+  <div id="admin-nav-submenu" class="hidden">
+    <div class="link-wrapper">
+      <%= link_to 'All Posts', admin_posts_path, class: ' ' %>
+      <%= link_to 'New Post', new_admin_post_path, class: ' ' %>
+      <%= link_to '-', admin_root_path, class: ' ' %>
+      <%= link_to 'mikeholubowski.com', root_path, class: ' ' %>
+    </div>
   </div>
 
 </div>

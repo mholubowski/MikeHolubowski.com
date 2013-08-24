@@ -1,3 +1,49 @@
 // Place all the styles related to the Admin/Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ----- index
+.post-wrapper {
+  margin: 20px;
+  margin-bottom: 40px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px -1px #ccc;
+
+  .section-wrap {
+    padding: 5px;
+    border: 1px solid #ddd;
+  }
+
+  .top-wrapper {
+    width: 100%;
+    background-color: $yellow-orange;
+    color: #444;
+    font-size: 16px;
+    .title {
+      padding: 3px;
+      display: inline-block;
+    }
+    .status {
+      padding: 3px;
+      float: right;
+      display: inline-block;
+      border-left: 1px solid darken($yellow-orange, 7%);
+      @include clickable;
+      &:hover {
+        background-color: lighten($yellow-orange, 5%);
+      }
+      span {
+        color: #fff;
+      }
+    }
+  }
+  .author {
+
+  }
+  .url-alias {
+
+  }
+  .body {
+    
+  }
+}

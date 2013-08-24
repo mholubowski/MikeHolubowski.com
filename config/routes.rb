@@ -10,6 +10,7 @@ Mikeholubowski::Application.routes.draw do
     resources :posts, only: [:index, :show]
   end
 
+  match '/admin' => 'admin/posts#index', as: 'admin_root'
   namespace :admin do
     resources :posts
   end

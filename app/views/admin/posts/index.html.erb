@@ -1,2 +1,30 @@
-<h1>Admin::Posts#index</h1>
-<p>Find me in app/views/admin/posts/index.html.erb</p>
+<% if @posts.empty? %>
+  <h1>There are no posts!</h1>
+<% else %>
+  <% @posts.each do |post| %>
+    <div class="post-wrapper">
+      <div class="top-wrapper">
+        <div class="title"><%= post.title %></div>
+        <div class="status">
+          <% if post.status == 'active' %>
+            <span>&bull;</span> active
+          <% else %>
+            inactive
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="stats-container">
+          <div class="author"><%= post.user.name %></div>
+          <div class="url-alias"><%= post.url_alias %></div>
+        </div>
+
+        <div class="body-container">
+          <div class="body"><%= post.body %></div>
+        </div> 
+      </div>
+
+    </div>
+  <% end %>
+<% end %>

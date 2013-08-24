@@ -19,7 +19,7 @@ group :development, :test do
   # gem 'spork', '0.9.2'
   gem 'better_errors'
   gem 'pry'
-  # gem 'binding_of_caller'
+  gem 'binding_of_caller'
 end
 
 # Gems used only for assets and not required

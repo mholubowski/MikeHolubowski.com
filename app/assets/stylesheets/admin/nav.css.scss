@@ -1,3 +1,72 @@
-#nav.admin {
-  background-color: $admin-bg;
+$admin-nav-font-color: #424242;
+$border: 1px solid darken($code-blue, 5%);
+
+@mixin admin-nav-clickable {
+  @include clickable;
+  &:hover {
+    background-color: lighten($code-blue, 5%);
+  }
+}
+
+#admin-nav {
+  width: 100%;
+  // padding: 10px;
+  background-color: $code-blue;
+  color: $admin-nav-font-color;
+  font-size: 16px;
+  border-bottom: 1px solid darken($code-blue, 5%);
+  a {
+    color: $admin-nav-font-color;
+    display: inline-block;
+  }
+  .nav-inner {
+    display: inline;
+  }
+  .left {
+    display: inline-block;
+  }
+  .right {
+    display: inline-block;
+    float: right;
+  }
+  .nav-el {
+    @include admin-nav-clickable;
+    border-right: $border;
+    border-left: $border;
+    padding: 5px;
+  }
+  .logo {
+
+  }
+  .logout {
+    color: $complement-1;
+  }
+}
+
+#admin-nav-submenu {
+  border-right: $border;
+  border-bottom: $border;
+  width: 145px;
+  background-color: lighten($code-blue, 2%);
+  opacity: 1;
+  position: absolute;
+  display: inline-block;
+  &.hidden {
+    display: none;
+  }
+
+  .link-wrapper {
+    a {
+      color: $admin-nav-font-color;
+      display: block;
+      padding: 2px 0;
+      width: 100%;
+      border-bottom: $border;
+      text-indent: 10px;
+      @include admin-nav-clickable; 
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
 }
