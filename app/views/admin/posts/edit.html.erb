@@ -1,2 +1,20 @@
-<h1>Admin::Posts#edit</h1>
-<p>Find me in app/views/admin/posts/edit.html.erb</p>
+<div class="row">
+
+    <!-- Form -->
+
+    <%= render 'admin/posts/new_form' %>
+
+
+    <!-- Preview -->
+
+    <div class="span4 offset1 new-post-preview-wrapper">
+        <div class="update-preview btn" onclick="md.update_md_preview()">Update <i class="icon-refresh"></i></div>
+        <h6>here render the form view with ajax</h6>
+        <div id="preview-container">
+
+        </div>
+    </div>
+
+</div>
+
+

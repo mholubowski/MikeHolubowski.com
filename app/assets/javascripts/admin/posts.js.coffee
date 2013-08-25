@@ -3,10 +3,10 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
-  md = 
+  md =
     update_md_preview: () ->
       content = $('#new-post-body').val()
-      console.log content 
+      console.log content
       request = $.ajax({
         url: "/render_markdown",
         type: "post",
@@ -15,9 +15,15 @@ jQuery ->
         }
       })
       request.done( (data) ->
-        console.log data 
+        console.log data
         $('#preview-container').html(data)
       )
+
+  t = -1
+  $('.new-post-form').on 'keyup', ->
+    clearTimeout(t) if t
+    t = setTimeout(md.update_md_preview, 699)
+
 
 
   window.md = md

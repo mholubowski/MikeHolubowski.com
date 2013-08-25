@@ -25,9 +25,13 @@ class Admin::PostsController < ApplicationController
   end
 
   def edit
+    @post = Post.find(params[:id])
   end
 
   def update
+    @post = Post.find(params[:id])
+    # TODO add error handling
+    @post.update_attributes(params[:post])
   end
 
   def destroy

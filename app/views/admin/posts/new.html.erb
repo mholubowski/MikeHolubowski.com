@@ -2,22 +2,7 @@
 
     <!-- Form -->
 
-    <div class="span4 new-post-form-wrapper">
-        <div class="form new-post-form admin">
-          <%= form_for [:admin, @post] do |f| %>
-            <%= f.label :title %>
-            <%= f.text_field :title %>
-
-            <%= f.label :url_alias %>
-            <%= f.text_field :url_alias %>  
-
-            <%= f.label :body %>
-            <%= f.text_area :body, id: 'new-post-body' %>
-            <br>
-            <%= f.submit class: 'btn' %>
-          <% end %>
-        </div>
-    </div>
+    <%= render 'admin/posts/new_form' %>
 
 
     <!-- Preview -->
@@ -26,7 +11,7 @@
         <div class="update-preview btn" onclick="md.update_md_preview()">Update <i class="icon-refresh"></i></div>
         <h6>here render the form view with ajax</h6>
         <div id="preview-container">
-            
+
         </div>
     </div>
 
