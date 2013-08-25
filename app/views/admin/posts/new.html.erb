@@ -1,17 +1,33 @@
-<div class="form new-post-form admin">
-  <%= form_for [:admin, @post] do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<div class="row">
 
-    <%= f.label :url_alias %>
-    <%= f.text_field :url_alias %>  
+    <!-- Form -->
 
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+    <div class="span4 new-post-form-wrapper">
+        <div class="form new-post-form admin">
+          <%= form_for [:admin, @post] do |f| %>
+            <%= f.label :title %>
+            <%= f.text_field :title %>
 
-    <%= f.label 'Create!' %>
-    <%= f.submit %>
-  <% end %>
+            <%= f.label :url_alias %>
+            <%= f.text_field :url_alias %>  
+
+            <%= f.label :body %>
+            <%= f.text_area :body %>
+
+            <%= f.label 'Create!' %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+    </div>
+
+
+    <!-- Preview -->
+
+    <div class="span4 offset1 new-post-preview-wrapper">
+        <div class="update-preview btn">Update <i class="icon-refresh"></i></div>
+        <h6>here render the form view with ajax</h6>
+    </div>
+
 </div>
 
-<div id="epiceditor"></div>
+

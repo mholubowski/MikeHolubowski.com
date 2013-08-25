@@ -5,9 +5,11 @@
 // ----- index
 .post-wrapper {
   margin: 20px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   background-color: #fff;
   box-shadow: 1px 1px 1px -1px #ccc;
+  max-width: 40%;
+  display: inline-block;
 
   .section-wrap {
     padding: 5px;
@@ -21,9 +23,10 @@
     font-size: 16px;
     .title {
       padding: 3px;
+      max-width: 80%;
       display: inline-block;
     }
-    .status {
+    .edit {
       padding: 3px;
       float: right;
       display: inline-block;
@@ -46,4 +49,14 @@
   .body {
     
   }
+}
+
+// ------ New Post
+
+.new-post-form-wrapper {
+  border-right: 1px dashed #ccc;
+}
+
+.new-post-preview-wrapper {
+
 }
