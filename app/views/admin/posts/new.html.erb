@@ -12,10 +12,9 @@
             <%= f.text_field :url_alias %>  
 
             <%= f.label :body %>
-            <%= f.text_area :body %>
-
-            <%= f.label 'Create!' %>
-            <%= f.submit %>
+            <%= f.text_area :body, id: 'new-post-body' %>
+            <br>
+            <%= f.submit class: 'btn' %>
           <% end %>
         </div>
     </div>
@@ -24,8 +23,11 @@
     <!-- Preview -->
 
     <div class="span4 offset1 new-post-preview-wrapper">
-        <div class="update-preview btn">Update <i class="icon-refresh"></i></div>
+        <div class="update-preview btn" onclick="md.update_md_preview()">Update <i class="icon-refresh"></i></div>
         <h6>here render the form view with ajax</h6>
+        <div id="preview-container">
+            
+        </div>
     </div>
 
 </div>

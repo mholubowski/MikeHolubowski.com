@@ -101,10 +101,10 @@ window.setInterval(function () {
 
 $(document).ready(function(){
 	newProblem();
-})
+});
 
 $(document).keydown(function(e){
-    if (e.keyCode == 37) { 
+    if (e.keyCode == 37) {
     	var true_button = $('#true');
        true_button.click();
        true_button.css('background-color','rgb(232, 243, 248)');

@@ -34,6 +34,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def render_markdown
+    # binding.pry
     content = params[:content]
     render text: Post.render_markdown(content)
   end
