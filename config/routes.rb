@@ -11,8 +11,10 @@ Mikeholubowski::Application.routes.draw do
   end
 
   match '/admin' => 'admin/posts#index', as: 'admin_root'
+  match '/render_markdown' => 'admin/posts#render_markdown'
   namespace :admin do
     resources :posts
+    post "posts/render_markdown"
   end
 
   get "greetings/hello"

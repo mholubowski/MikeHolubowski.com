@@ -32,4 +32,9 @@ class Admin::PostsController < ApplicationController
 
   def destroy
   end
+
+  def render_markdown
+    content = params[:content]
+    render text: Post.render_markdown(content)
+  end
 end
