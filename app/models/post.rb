@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
 
   def share_link (site=nil)
     return url if site.nil?
-    url + "?refferer=#{site.to_s}"
+    url + "?referrer=#{site.to_s}"
   end
 
   def track(request)

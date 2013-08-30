@@ -5,9 +5,9 @@
 
 <div class="admin-table-wrap">
   <table class="admin-table table table-bordered">
-    <thead>
+    <tdead>
       <tr>
-        <th>Title</th>
+        <td>Title</th>
         <th>Author</th>
         <th>Date Published</th>
         <th>Active?</th>
@@ -32,8 +32,8 @@
         <td><%= a_t.hacker_news_views %></td>
         <td><%= a_t.twitter_views %></td>
         <td><%= a_t.reddit_views %></td>
-        <th><%= a_t.other_views %></th>
-        <th><%= distance_of_time_in_words(Time.now - a_t.last_viewed_at) %></th>
+        <td><%= a_t.other_views %></td>
+        <td><%= distance_of_time_in_words(Time.now - a_t.last_viewed_at) unless a_t.last_viewed_at.nil? %></td>
       </tr>
     <% end %>
   </table>

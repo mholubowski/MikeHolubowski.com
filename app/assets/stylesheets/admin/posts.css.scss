@@ -70,6 +70,9 @@
   .footer-container {
     border-top: 1px dashed #ccc;
   }
+  .share-link {
+    @include clickable;
+  }
 }
 
 // ------ Admin Table View
