@@ -4,16 +4,23 @@
 	padding:0;
 	margin:0;
 	min-height:3px !important;
+  display: inline-block;
+  float: left;
 }
 
 #header-bar-1 {
 	background-color:$yellow-orange;
+  margin: 0px;
+  width: 80%;
 }
 
 #header-bar-2 {
 	background-color:lighten(#185c80, 10%);
+  margin: 0px;
+  width: 20%;
 }
 
 #header-bar-3 {
 	background-color:darken($app-bg-color, 10%);
+  margin: 0px;
 }

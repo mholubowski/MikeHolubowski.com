@@ -1,8 +1,14 @@
 <% if @posts.empty? %>
-  <h1>There are no posts!</h1>
+<h1>There are no posts!</h1>
 <% else %>
   <% @posts.each do |post| %>
-    <div class="post-wrapper">
+  <div class="post-row">
+
+    <div class="post-index <%= 'inactive' if post.inactive? %>">
+      <%= post.id %>
+    </div>
+
+    <div class="post-wrapper <%= 'inactive' if post.inactive? %>">
       <div class="top-wrapper">
         <div class="title"><%= post.title %></div>
         <div class="edit">
@@ -12,9 +18,9 @@
         <div class="analytics">
           <%#= link_to raw('<i class="icon-edit"></i>'), admin_post_analytics_path(post) %>
         </div>
-        
+
       </div>
-      
+
       <div class="section-wrap">
         <div class="stats-container">
           <div class="author"><%= post.user.name %></div>
@@ -24,9 +30,10 @@
 
         <div class="body-container">
           <div class="body"><%= post.body %></div>
-        </div> 
+        </div>
       </div>
 
     </div>
+  </div>
   <% end %>
 <% end %>

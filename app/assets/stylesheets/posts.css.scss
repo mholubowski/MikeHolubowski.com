@@ -1,3 +1,18 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ----- INDEX -----
+
+
+
+
+// ----- SHOW -----
+.show-post-wrapper {
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 0px #ccc;
+  border: 1px solid #ddd;
+  .top-bar {
+    background-color: $yellow-orange;
+  }
+}

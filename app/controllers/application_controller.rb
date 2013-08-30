@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :num
-  helper_method :current_user, :logged_in?#, :markdown
+  helper_method :current_user, :logged_in?, :markdown
 
   def num
     @num = params[:num]
@@ -29,9 +29,9 @@ class ApplicationController < ActionController::Base
   end
 
   def markdown(text)
-    # @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
-    #   autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
-    # @markdown.render(text).html_safe
+    @markdown ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+      autolink: true, no_intra_emphasis: true, fenced_code_blocks: true)
+    @markdown.render(text).html_safe
   end
 
 end

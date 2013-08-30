@@ -1,7 +1,13 @@
-<h4><%= @post.title %></h4>
-<h6><%= @post.user.name %></h6>
-<small><%= @post.url_alias %></small>
+<div class="show-post-wrapper">
+  <div class="top-bar">
+    <%= @post.title %>
+  </div>
+  <h6><%= @post.user.name %></h6>
+  Share: <small><%= @post.share_link %></small>
+  <br>
+  <small><%= @post.url_alias %></small>
 
-<div class="post-body">
-  <%= @post.body %>
+  <div class="post-body">
+    <%= markdown @post.body %>
+  </div>
 </div>
