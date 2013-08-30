@@ -5,7 +5,7 @@ class AnalyticsTracker < ActiveRecord::Base
   def track(params)
     # TODO even if referrer != one of the above websites, it doesn't inc other
     referrer = params[:referrer]
-    unless known_sites.include?(referrer.to_sym)
+    unless referrer && known_sites.include?(referrer.to_sym)
       self.increment(:other_views, 1)
       self.increment(:total_views, 1)
     else
