@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130823072056) do
+ActiveRecord::Schema.define(:version => 20130830041040) do
+
+  create_table "analytics_trackers", :force => true do |t|
+    t.integer  "twitter_views"
+    t.integer  "hacker_news_views"
+    t.integer  "reddit_views"
+    t.integer  "facebook_views"
+    t.integer  "other_views"
+    t.integer  "total_views"
+    t.integer  "post_id"
+    t.datetime "last_viewed_at"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
+
+  add_index "analytics_trackers", ["post_id"], :name => "index_analytics_trackers_on_post_id"
 
   create_table "high_scores", :force => true do |t|
     t.string   "game"

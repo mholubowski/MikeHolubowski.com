@@ -24,6 +24,7 @@ jQuery ->
     clearTimeout(t) if t
     t = setTimeout(md.update_md_preview, 699)
 
-
+  $('.share-links').on 'click', '.share-link', ->
+    $(this).siblings('.url-container').html($(this).attr('full-url'))
 
   window.md = md

@@ -12,9 +12,12 @@
         <th>Date Published</th>
         <th>Active?</th>
         <th>Total Views</th>
-        <th>a</th>
-        <th>b</th>
-        <th>c</th>
+        <th>FB Views</th>
+        <th>HN Views</th>
+        <th>Twitter Views</th>
+        <th>Reddit Views</th>
+        <th>Other Views</th>
+        <th>Last View</th>
       </tr>
     </thead>
     <% @posts.each do |post| %>
@@ -23,10 +26,14 @@
         <td><%= post.user.name %></td>
         <td><%= post.created_at %></td>
         <td><%= post.active? %></td>
-        <td><%#= post.total_views %></td>
-        <td>a</td>
-        <td>b</td>
-        <td>c</td>
+        <% a_t = post.analytics_tracker %>
+        <td><%= a_t.total_views %></td>
+        <td><%= a_t.facebook_views %></td>
+        <td><%= a_t.hacker_news_views %></td>
+        <td><%= a_t.twitter_views %></td>
+        <td><%= a_t.reddit_views %></td>
+        <th><%= a_t.other_views %></th>
+        <th><%= distance_of_time_in_words(Time.now - a_t.last_viewed_at) %></th>
       </tr>
     <% end %>
   </table>

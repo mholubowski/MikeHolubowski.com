@@ -36,6 +36,15 @@
         <div class="body-container">
           <div class="body"><%= post.body %></div>
         </div>
+
+        <div class="footer-container">
+          <div class="share-links">
+            <% [:facebook, :reddit, :hacker_news, :twitter].each do |site| %>
+              <div class="share-link" full-url="<%= post.share_link(site) %>"><%= site.to_s %></div>
+            <% end %>
+            <div class="well url-container"></div>
+          </div>
+        </div>
       </div>
 
     </div>

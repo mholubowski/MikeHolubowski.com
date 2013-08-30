@@ -5,5 +5,6 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.track(params)
   end
 end

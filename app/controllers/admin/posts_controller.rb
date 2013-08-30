@@ -2,6 +2,7 @@ class Admin::PostsController < ApplicationController
   layout 'who_blogs_anyway'
 
   def show
+    @post = Post.find(params[:id])
   end
 
   def index

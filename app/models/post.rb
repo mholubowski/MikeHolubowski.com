@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
   include Redcarpet
   belongs_to :user
+  has_one :analytics_tracker
+  before_create :create_analytics_tracker
+
   attr_accessible :body, :status, :title, :url_alias
 
   def active?
@@ -21,6 +24,10 @@ class Post < ActiveRecord::Base
     url + "?refferer=#{site.to_s}"
   end
 
+  def track(request)
+    analytics_tracker.track(request)
+  end
+
   private
 
   def url
@@ -29,6 +36,10 @@ class Post < ActiveRecord::Base
     else
       "http://www.mikeholubowski.com/blog/posts/#{id}"
     end
+  end
+
+  def create_analytics_tracker
+    self.analytics_tracker = AnalyticsTracker.create
   end
 
 end
