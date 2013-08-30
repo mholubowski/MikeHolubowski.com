@@ -1,3 +1,8 @@
+<div class="toggle-btns">
+  <%= link_to 'List View', admin_posts_path, class: 'btn btn-primary' %>
+  <%= link_to 'Table View', admin_posts_table_view_path, class: 'btn' %>
+</div>
+
 <% if @posts.empty? %>
 <h1>There are no posts!</h1>
 <% else %>

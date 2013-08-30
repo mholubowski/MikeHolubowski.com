@@ -8,6 +8,10 @@ class Admin::PostsController < ApplicationController
     @posts = Post.order('id DESC')
   end
 
+  def table_view
+    @posts = Post.order('id DESC')
+  end
+
   def new
     @post = Post.new
   end

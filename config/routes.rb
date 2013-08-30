@@ -1,7 +1,7 @@
 Mikeholubowski::Application.routes.draw do
 
   root to: 'home#intro'
-  
+
   resources :sessions, only: [:new, :create, :destroy]
   match '/logout' => 'sessions#destroy'
   match '/login'  => 'sessions#new'
@@ -14,6 +14,7 @@ Mikeholubowski::Application.routes.draw do
   match '/render_markdown' => 'admin/posts#render_markdown'
   namespace :admin do
     resources :posts
+    match '/table_view' => 'posts#table_view', as: 'posts_table_view'
     post "posts/render_markdown"
   end
 
@@ -27,13 +28,13 @@ Mikeholubowski::Application.routes.draw do
   match '/skills'   => 'home#skills'
   match '/style'    => 'home#style_test'
 
-  match '/projects/alliance'         => 'project#alliance' 
+  match '/projects/alliance'         => 'project#alliance'
   match '/projects/alliedgreeks'     => 'project#alliedgreeks'
-  match '/projects/ato_rally_poster' => 'project#ato_rally_poster' 
-  match '/projects/ball'             => 'project#ball' 
-  match '/projects/efp'              => 'project#efp' 
-  match '/projects/followalong'      => 'project#followalong' 
-  match '/projects/ivlaundry'        => 'project#ivlaundry' 
+  match '/projects/ato_rally_poster' => 'project#ato_rally_poster'
+  match '/projects/ball'             => 'project#ball'
+  match '/projects/efp'              => 'project#efp'
+  match '/projects/followalong'      => 'project#followalong'
+  match '/projects/ivlaundry'        => 'project#ivlaundry'
   match '/projects/mikeho'           => 'project#mikeho'
   match '/projects/outfit'           => 'project#outfit'
   match '/projects/set'              => 'project#set'
@@ -43,5 +44,5 @@ Mikeholubowski::Application.routes.draw do
   get "set_player/create"
   resources :set_players
   resources :true_false_players
- 
+
 end
