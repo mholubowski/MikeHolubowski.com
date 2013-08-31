@@ -1,6 +1,4 @@
-require 'bcrypt'
 class User < ActiveRecord::Base
-  include BCrypt
   has_many :posts, :dependent => :destroy
 
   attr_accessible :name, :email, :password
