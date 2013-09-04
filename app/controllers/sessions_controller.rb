@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:email])
-
     if user.password == params[:password]
       session[:auth_token] = user.auth_token
       return redirect_to admin_posts_path

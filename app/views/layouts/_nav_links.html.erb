@@ -1,0 +1,16 @@
+    <!-- Page Navigation -->
+    <div id="links" style="">
+      <br>
+      <ul>
+
+        <li> <%= link_to "projects", projects_path, class: ('active' if params[:controller] == 'project' || params[:action] == 'projects') %> </li>
+        <% else %>
+
+        <li><%= link_to "skills", skills_path, class: ('active' if params[:action] == 'skills') %>
+
+        <li><%= link_to "bio", bio_path, class: ('active' if params[:action] == 'bio') %>
+
+        <li><%= link_to "contact", contact_path, class: ('active' if params[:action] == 'contact') %>
+
+      </ul>
+    </div>

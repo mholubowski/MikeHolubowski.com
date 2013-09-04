@@ -9,110 +9,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: 500px;
-  // min-width: 1200px;
-  -webkit-transition: background-size 2s;
-  box-shadow: inset 0px 0px 22px 2px #3F3F3F;
-  &:hover {
-    // background-size: 100%;
-    -webkit-transition: background-size 2s;
-  }
-}
-
-.backdrop-image-2 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/barcelona-boardwalk.jpg");
-}
-
-.backdrop-image-3 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/fields.jpg");
-}
-
-.backdrop-image-4 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/maldives.jpg");
-}
-
-.backdrop-image-5 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/lighthousemorning.jpg");
-}
-
-.backdrop-image-6 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/blurred_lines.jpg");
-}
-
-.backdrop-image-7 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/gnarly.jpg");
-}
-
-.backdrop-image-8 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/night-city.jpg");
-}
-
-.backdrop-image-9 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/overhead-hi-res.jpg");
-}
-
-.backdrop-image-10 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/top_view.jpg");
-}
-
-.backdrop-image-11 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/unsplash-kitsune-3.jpg");
-}
-
-.backdrop-image-12 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/mike_by_lake.jpg");
-}
-
-.backdrop-image-13 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/mike_by_lake2.jpg");
-  background-position-y: -75px;
-}
-
-.backdrop-image-14 {
-  @extend .backdrop-image-1;
-  background-image: image-url("backdrops/mike_by_mount1.jpg");
-  // background-position-x: -183px;
-  // background-size: 116%;
-  // min-height: 400px;
-  -webkit-transition: background-size 2s;
-  &:hover {
-    // background-size: 115%;
-    -webkit-transition: background-size 2s;
-  }
+  box-shadow: inset 0px 0px 2px 0px #919191;
 }
 
 .backdrop-image-15 {
   @extend .backdrop-image-1;
-  background-image: image-url("backdrops/mike_by_mount1_reverse.jpg");
-  // background-position-x: -183px;
-  // background-size: 116%;
-  // min-height: 400px;
-  -webkit-transition: background-size 2s;
-  &:hover {
-    // background-size: 115%;
-    -webkit-transition: background-size 2s;
-  }
+  background-image: image-url("backdrops/mike_cottonwood_q1.jpg");
 }
 
 .backdrop-color {
-  background-color: rgba(0,0,0,.4);
+  background-color: rgba(0,0,0,.6);
   height: 100%;
-  width: 100%; 
-  -webkit-transition: background-color 2s;
-  &:hover {
-    background-color: rgba(0,0,0,.7);
-    -webkit-transition: background-color 2s;
-  } 
+  width: 100%;
 }
 

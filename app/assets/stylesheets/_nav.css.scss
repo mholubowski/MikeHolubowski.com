@@ -45,6 +45,7 @@ div.container-fluid.nav-con {
 
 #links {
 	margin-bottom: 10px;
+	line-height: 0px;
 	ul {
 		display: inline;
 		padding-bottom: 5px;
@@ -53,7 +54,7 @@ div.container-fluid.nav-con {
 			a {
 				color: $code-black;
 				&.active{
-					color: red;
+					color: $code-blue;
 				}
 				&:hover{
 					text-decoration: none;

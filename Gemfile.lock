@@ -145,7 +145,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bcrypt-ruby (= 3.0.1)
+  bcrypt-ruby
   better_errors
   binding_of_caller
   bootstrap-sass-rails

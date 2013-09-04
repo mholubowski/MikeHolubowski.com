@@ -13,28 +13,26 @@
 	<%= render 'layouts/header' %>
 	<%= render 'layouts/nav' %>
 
-	<% unless Rails.env.development? %>
 	<div id="work-in-progress">
 		<i class="icon-star-empty"></i>This site is a work in progress! <small>8/21/13</small>
 	</div>
-	<% end %>
 
 	<% if current_page? root_path %>
-		<% @num ||= (1..12).to_a.shuffle.first %>
-		<div class="backdrop-image-<%= @num %>">
+		<%# @num ||= (1..12).to_a.shuffle.first %>
+		<div class="backdrop-image-15">
 		<div class="backdrop-color">
 	<% end %>
 
 		<div id="main-area" class="container-fluid ">
 			<%= yield %>
 		</div>
-	
+
 	<% if current_page? root_path %>
 		</div>
 		</div>
 	<% end %>
 	<%= render 'layouts/who_blogs_button' %>
-	<%= render 'layouts/footer' unless current_page? root_path %>
+	<%#= render 'layouts/footer' unless current_page? root_path %>
 	<%= render 'layouts/google_analytics' if Rails.env.production? %>
 </body>
 
